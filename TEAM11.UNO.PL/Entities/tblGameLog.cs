@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace TEAM11.UNO.PL.Entities
 {
-    internal class tblGameLog
+    public class tblGameLog
     {
+        public int Id { get; set; }
+        public string Description {  get; set; }
+        public string Timestamp { get; set; }
+
+        // Connection among tables
+        public virtual tblGame GameId { get; set; }
     }
 }

@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace TEAM11.UNO.PL.Entities
 {
-    internal class tblPlayerCard
+    public class tblPlayerCard
     {
+        public int Id { get; set; }
+
+        // Connection among tables
+        public virtual tblCard CardId {  get; set; }
+        public virtual tblPlayer PlayerId { get; set; }
     }
 }

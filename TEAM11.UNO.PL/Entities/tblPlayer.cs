@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace TEAM11.UNO.PL.Entities
 {
-    internal class tblPlayer
+    public class tblPlayer
     {
+        public int Id { get; set; }
+        public bool IsComputerPlayer { get; set; }
+
+        // Connection among tables
+        public virtual tblUser UserId { get; set; }
+        public virtual tblGame GameId {  get; set; }
     }
 }
