@@ -58,6 +58,7 @@ namespace TEAM11.UNO.PL.Data
                 entity.ToTable("tblCard");
 
                 // Going to need to change this since we are using Int and not Guids (that's what the foreach does above)
+                // This now auto increments meaning every Id will be one more than the previous.
                 entity.Property(e => e.Id).ValueGeneratedOnAdd();
 
                 // Otherwise, just creating the properties from the Entities folder.
