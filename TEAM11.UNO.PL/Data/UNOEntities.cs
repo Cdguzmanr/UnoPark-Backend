@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.SqlServer.Server;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -161,17 +162,76 @@ namespace TEAM11.UNO.PL.Data
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
+                entity.Property(e => e.IsPaused)
+                    .IsRequired()
+                    .HasDefaultValue(false);
+
+                List<tblGame> games = new List<tblGame>
+                {
+                    new tblGame { Name = "", IsPaused = true },
+                    new tblGame { Name = "", IsPaused = true },
+                    new tblGame { Name = "", IsPaused = true },
+                };
+
+                modelBuilder.Entity<tblGame>().HasData(games);
+
             });
         }
 
         private void CreateGameLogs(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<tblGameLog>(entity =>
+            {
+                entity.HasKey(e => e.Id).HasName("PK_tblGameLog_Id");
 
+                entity.ToTable("tblGameLog");
+
+                entity.Property(e => e.Id).ValueGeneratedOnAdd();
+                entity.Property(e => e.Description)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Timestamp)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                List<tblGameLog> gamelogs = new List<tblGameLog>
+                {
+                    new tblGameLog { Description = "", Timestamp = "" },
+                    new tblGameLog { Description = "", Timestamp = "" },
+                    new tblGameLog { Description = "", Timestamp = "" }
+                };
+
+                modelBuilder.Entity<tblGame>().HasData(gamelogs);
+
+            });
         }
 
         private void CreatePlayers(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<tblPlayer>(entity =>
+            {
+                entity.HasKey(e => e.Id).HasName("PK_tblPlayer_Id");
 
+                entity.ToTable("tblPlayer");
+
+                entity.Property(e => e.Id).ValueGeneratedOnAdd();
+
+                entity.Property(e => e.IsComputerPlayer)
+                    .IsRequired()
+                    .HasDefaultValue(false);
+
+                List<tblPlayer> players = new List<tblPlayer>
+                {
+                    new tblPlayer { IsComputerPlayer = true },
+                    new tblPlayer { IsComputerPlayer = true },
+                    new tblPlayer { IsComputerPlayer = true }
+                };
+
+                modelBuilder.Entity<tblPlayer>().HasData(players);
+            });
         }
 
         private void CreatePlayerCards(ModelBuilder modelBuilder)
