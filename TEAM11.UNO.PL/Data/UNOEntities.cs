@@ -98,6 +98,16 @@ namespace TEAM11.UNO.PL.Data
                     new tblCard { Name = "7", Color = "Blue", Type = "Number" },
                     new tblCard { Name = "8", Color = "Blue", Type = "Number" },
                     new tblCard { Name = "9", Color = "Blue", Type = "Number" },
+                    new tblCard { Name = "0", Color = "Yellow", Type = "Number" },
+                    new tblCard { Name = "1", Color = "Yellow", Type = "Number" },
+                    new tblCard { Name = "2", Color = "Yellow", Type = "Number" },
+                    new tblCard { Name = "3", Color = "Yellow", Type = "Number" },
+                    new tblCard { Name = "4", Color = "Yellow", Type = "Number" },
+                    new tblCard { Name = "5", Color = "Yellow", Type = "Number" },
+                    new tblCard { Name = "6", Color = "Yellow", Type = "Number" },
+                    new tblCard { Name = "7", Color = "Yellow", Type = "Number" },
+                    new tblCard { Name = "8", Color = "Yellow", Type = "Number" },
+                    new tblCard { Name = "9", Color = "Yellow", Type = "Number" },
 
                     // Action cards
                     new tblCard { Name = "Skip", Color = "Red", Type = "Action" },
@@ -106,6 +116,9 @@ namespace TEAM11.UNO.PL.Data
                     new tblCard { Name = "Skip", Color = "Blue", Type = "Action" },
                     new tblCard { Name = "Reverse", Color = "Blue", Type = "Action" },
                     new tblCard { Name = "Draw Two", Color = "Blue", Type = "Action" },
+                    new tblCard { Name = "Skip", Color = "Yellow", Type = "Action" },
+                    new tblCard { Name = "Reverse", Color = "Yellow", Type = "Action" },
+                    new tblCard { Name = "Draw Two", Color = "Yellow", Type = "Action" },
 
                     // Wild cards
                     new tblCard { Name = "Wild", Color = "Wild", Type = "Wild" },
