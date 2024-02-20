@@ -236,12 +236,51 @@ namespace TEAM11.UNO.PL.Data
 
         private void CreatePlayerCards(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<tblPlayerCard>(entity =>
+            {
+                entity.HasKey(e => e.Id).HasName("PK_tblPlayerCard_Id");
 
+                entity.ToTable("tblPlayerCard");
+
+                entity.Property(e => e.Id).ValueGeneratedOnAdd();
+
+                List<tblPlayerCard> playerCards = new List<tblPlayerCard>
+                {
+                    
+                };
+
+                modelBuilder.Entity<tblPlayerCard>().HasData(playerCards);
+            });
         }
 
         private void CreateUsers(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<tblUser>(entity =>
+            {
+                entity.HasKey(e => e.Id).HasName("PK_tblUser_Id");
 
+                entity.ToTable("tblUser");
+
+                entity.Property(e => e.Id).ValueGeneratedOnAdd();
+
+                entity.Property(e => e.Username)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Password)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                List<tblUser> users = new List<tblUser>
+                {
+                    new tblUser { Username = "Austin", Password = GetHash("Austin")},
+                    new tblUser { Username = "Carlos", Password = GetHash("Carlos")}
+                };
+
+                modelBuilder.Entity<tblUser>().HasData(users);
+            });
         }
 
         private static string GetHash(string Password)
