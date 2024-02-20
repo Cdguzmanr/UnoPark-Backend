@@ -144,13 +144,24 @@ namespace TEAM11.UNO.PL.Data
 
                 };
                 modelBuilder.Entity<tblCard>().HasData(cards);
-
             });
         }
 
         private void CreateGames(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<tblGame>(entity =>
+            {
+                entity.HasKey(e => e.Id).HasName("PK_tblGame_Id");
 
+                entity.ToTable("tblGame");
+
+                entity.Property(e => e.Id).ValueGeneratedOnAdd();
+                entity.Property(e => e.Name)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+            });
         }
 
         private void CreateGameLogs(ModelBuilder modelBuilder)
