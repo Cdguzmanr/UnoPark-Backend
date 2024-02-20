@@ -1,0 +1,6 @@
+@TEAM11.UNO.API_HostAddress = http://localhost:5125
+
+GET {{TEAM11.UNO.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

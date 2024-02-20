@@ -44,7 +44,44 @@ namespace TEAM11.UNO.PL.Data
 
         }
 
+        private void CreateCards(ModelBuilder modelBuilder)
+        {
 
+        }
+
+        private void CreateGames(ModelBuilder modelBuilder)
+        {
+
+        }
+
+        private void CreateGameLogs(ModelBuilder modelBuilder)
+        {
+
+        }
+
+        private void CreatePlayers(ModelBuilder modelBuilder)
+        {
+
+        }
+
+        private void CreatePlayerCards(ModelBuilder modelBuilder)
+        {
+
+        }
+
+        private void CreateUsers(ModelBuilder modelBuilder)
+        {
+
+        }
+
+        private static string GetHash(string Password)
+        {
+            using (var hasher = new System.Security.Cryptography.SHA1Managed())
+            {
+                var hashbytes = System.Text.Encoding.UTF8.GetBytes(Password);
+                return Convert.ToBase64String(hasher.ComputeHash(hashbytes));
+            }
+        }
 
     }
 }
