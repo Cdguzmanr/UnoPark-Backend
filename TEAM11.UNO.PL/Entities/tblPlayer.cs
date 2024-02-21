@@ -8,7 +8,7 @@ namespace TEAM11.UNO.PL.Entities
 {
     public class tblPlayer
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         public bool IsComputerPlayer { get; set; }
 
         // Connection among tables

@@ -11,6 +11,15 @@ namespace TEAM11.UNO.PL.Data
 {
     public class UNOEntities : DbContext
     {
+        // Ain't got a clue about the "size" of the guid that we need. How do we figure that out?
+
+        Guid[] cardId = new Guid[1];
+        Guid[] gameId = new Guid[1];
+        Guid[] gamelogId = new Guid[1];
+        Guid[] playerId = new Guid[1];
+        Guid[] playercardId = new Guid[1];
+        Guid[] userId = new Guid[1];
+
         public virtual DbSet<tblCard> tblCards { get; set; }
         public virtual DbSet<tblGame> tblGames { get; set; }
         public virtual DbSet<tblGameLog> tblGameLogs { get; set; }
@@ -47,10 +56,8 @@ namespace TEAM11.UNO.PL.Data
 
         private void CreateCards(ModelBuilder modelBuilder)
         {
-            // Guessing we need to change this to work with Id instead of Guid, but it might create the Id for us automatically? 
-
-            //for (int i = 0; i < formatId.Length; i++)
-            //    formatId[i] = Guid.NewGuid();
+            for (int i = 0; i < cardId.Length; i++)
+                cardId[i] = Guid.NewGuid();
 
             modelBuilder.Entity<tblCard>(entity =>
             {
@@ -58,9 +65,8 @@ namespace TEAM11.UNO.PL.Data
 
                 entity.ToTable("tblCard");
 
-                // Going to need to change this since we are using Int and not Guids (that's what the foreach does above)
-                // This now auto increments meaning every Id will be one more than the previous.
-                entity.Property(e => e.Id).ValueGeneratedOnAdd();
+                // Since we are using guids and foreach them above, we do not need to generate on creation. That's why this is set to Never.
+                entity.Property(e => e.Id).ValueGeneratedNever();
 
                 // Otherwise, just creating the properties from the Entities folder.
                 entity.Property(e => e.Name)
@@ -150,13 +156,16 @@ namespace TEAM11.UNO.PL.Data
 
         private void CreateGames(ModelBuilder modelBuilder)
         {
+            for (int i = 0; i < gameId.Length; i++)
+                gameId[i] = Guid.NewGuid();
+
             modelBuilder.Entity<tblGame>(entity =>
             {
                 entity.HasKey(e => e.Id).HasName("PK_tblGame_Id");
 
                 entity.ToTable("tblGame");
 
-                entity.Property(e => e.Id).ValueGeneratedOnAdd();
+                entity.Property(e => e.Id).ValueGeneratedNever();
                 entity.Property(e => e.Name)
                     .IsRequired()
                     .HasMaxLength(50)
@@ -180,13 +189,16 @@ namespace TEAM11.UNO.PL.Data
 
         private void CreateGameLogs(ModelBuilder modelBuilder)
         {
+            for (int i = 0; i < gamelogId.Length; i++)
+                gamelogId[i] = Guid.NewGuid();
+
             modelBuilder.Entity<tblGameLog>(entity =>
             {
                 entity.HasKey(e => e.Id).HasName("PK_tblGameLog_Id");
 
                 entity.ToTable("tblGameLog");
 
-                entity.Property(e => e.Id).ValueGeneratedOnAdd();
+                entity.Property(e => e.Id).ValueGeneratedNever();
                 entity.Property(e => e.Description)
                     .IsRequired()
                     .HasMaxLength(50)
@@ -211,13 +223,16 @@ namespace TEAM11.UNO.PL.Data
 
         private void CreatePlayers(ModelBuilder modelBuilder)
         {
+            for (int i = 0; i < playerId.Length; i++)
+                playerId[i] = Guid.NewGuid();
+
             modelBuilder.Entity<tblPlayer>(entity =>
             {
                 entity.HasKey(e => e.Id).HasName("PK_tblPlayer_Id");
 
                 entity.ToTable("tblPlayer");
 
-                entity.Property(e => e.Id).ValueGeneratedOnAdd();
+                entity.Property(e => e.Id).ValueGeneratedNever();
 
                 entity.Property(e => e.IsComputerPlayer)
                     .IsRequired()
@@ -225,9 +240,9 @@ namespace TEAM11.UNO.PL.Data
 
                 List<tblPlayer> players = new List<tblPlayer>
                 {
-                    new tblPlayer { IsComputerPlayer = true },
-                    new tblPlayer { IsComputerPlayer = true },
-                    new tblPlayer { IsComputerPlayer = true }
+                    new tblPlayer { IsComputerPlayer = false },
+                    new tblPlayer { IsComputerPlayer = false },
+                    new tblPlayer { IsComputerPlayer = false }
                 };
 
                 modelBuilder.Entity<tblPlayer>().HasData(players);
@@ -236,13 +251,16 @@ namespace TEAM11.UNO.PL.Data
 
         private void CreatePlayerCards(ModelBuilder modelBuilder)
         {
+            for (int i = 0; i < playercardId.Length; i++)
+                playercardId[i] = Guid.NewGuid();
+
             modelBuilder.Entity<tblPlayerCard>(entity =>
             {
                 entity.HasKey(e => e.Id).HasName("PK_tblPlayerCard_Id");
 
                 entity.ToTable("tblPlayerCard");
 
-                entity.Property(e => e.Id).ValueGeneratedOnAdd();
+                entity.Property(e => e.Id).ValueGeneratedNever();
 
                 List<tblPlayerCard> playerCards = new List<tblPlayerCard>
                 {
@@ -255,13 +273,16 @@ namespace TEAM11.UNO.PL.Data
 
         private void CreateUsers(ModelBuilder modelBuilder)
         {
+            for (int i = 0; i < userId.Length; i++)
+                userId[i] = Guid.NewGuid();
+
             modelBuilder.Entity<tblUser>(entity =>
             {
                 entity.HasKey(e => e.Id).HasName("PK_tblUser_Id");
 
                 entity.ToTable("tblUser");
 
-                entity.Property(e => e.Id).ValueGeneratedOnAdd();
+                entity.Property(e => e.Id).ValueGeneratedNever();
 
                 entity.Property(e => e.Username)
                     .IsRequired()
@@ -273,10 +294,21 @@ namespace TEAM11.UNO.PL.Data
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
+                entity.Property(e => e.FirstName)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.LastName)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
                 List<tblUser> users = new List<tblUser>
                 {
-                    new tblUser { Username = "Austin", Password = GetHash("Austin")},
-                    new tblUser { Username = "Carlos", Password = GetHash("Carlos")}
+                    new tblUser { Username = "Austin", Password = GetHash("Austin"), FirstName = "Austin", LastName = "Steffes"},
+                    new tblUser { Username = "Carlos", Password = GetHash("Carlos"), FirstName = "Carlos", LastName = "Guzman"},
+                    new tblUser { Username = "Brian", Password = GetHash("Brian"), FirstName = "Brian", LastName = "Foote"}
                 };
 
                 modelBuilder.Entity<tblUser>().HasData(users);

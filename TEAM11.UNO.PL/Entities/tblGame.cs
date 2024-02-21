@@ -8,7 +8,7 @@ namespace TEAM11.UNO.PL.Entities
 {
     public class tblGame
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         public string Name { get; set; }
         public bool IsPaused {  get; set; }
 

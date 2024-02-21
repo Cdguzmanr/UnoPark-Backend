@@ -8,10 +8,14 @@ namespace TEAM11.UNO.PL.Entities
 {
     public class tblUser
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         public string Username { get; set; }
         
         // Might want to hash this password in database
         public string Password { get; set; }
+
+        // Added in properties based on Meeting #2 with Brian
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
     }
 }
