@@ -240,9 +240,9 @@ namespace TEAM11.UNO.PL.Data
 
                 List<tblPlayer> players = new List<tblPlayer>
                 {
-                    new tblPlayer { IsComputerPlayer = true },
-                    new tblPlayer { IsComputerPlayer = true },
-                    new tblPlayer { IsComputerPlayer = true }
+                    new tblPlayer { IsComputerPlayer = false },
+                    new tblPlayer { IsComputerPlayer = false },
+                    new tblPlayer { IsComputerPlayer = false }
                 };
 
                 modelBuilder.Entity<tblPlayer>().HasData(players);
