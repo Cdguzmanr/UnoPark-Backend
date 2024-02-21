@@ -8,7 +8,7 @@ namespace TEAM11.UNO.PL.Entities
 {
     public class tblGameLog
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         public string Description {  get; set; }
         public string Timestamp { get; set; }
 

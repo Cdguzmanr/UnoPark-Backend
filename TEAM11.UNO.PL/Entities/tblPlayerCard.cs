@@ -8,7 +8,7 @@ namespace TEAM11.UNO.PL.Entities
 {
     public class tblPlayerCard
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         // Connection among tables
         public virtual tblCard CardId {  get; set; }
