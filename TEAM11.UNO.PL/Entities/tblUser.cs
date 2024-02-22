@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TEAM11.UNO.PL.Entities
 {
-    public class tblUser
+    public class tblUser : IEntity
     {
         public Guid Id { get; set; }
         public string Username { get; set; }

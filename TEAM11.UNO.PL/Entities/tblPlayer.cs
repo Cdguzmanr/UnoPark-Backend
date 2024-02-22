@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TEAM11.UNO.PL.Entities
 {
-    public class tblPlayer
+    public class tblPlayer : IEntity
     {
         public Guid Id { get; set; }
         public bool IsComputerPlayer { get; set; }
