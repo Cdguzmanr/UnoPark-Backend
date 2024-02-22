@@ -15,6 +15,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TEAM11.UNO.API", "TEAM11.UN
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TEAM11.UNO.API.Test", "TEAM11.UNO.API.Test\TEAM11.UNO.API.Test.csproj", "{AC1BCC70-8FD5-42B2-985B-963DCE9DEC6A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TEAM11.UNO.MigrationHandler", "TEAM11.UNO.MigrationHandler\TEAM11.UNO.MigrationHandler.csproj", "{FA93CE30-CE19-4CBE-895E-4941017443B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TEAM11.UNO.BL.Models", "TEAM11.UNO.BL.Models\TEAM11.UNO.BL.Models.csproj", "{9D4A7E49-C612-468D-9A97-51DD77771088}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{7EE24CC1-8AE5-4566-973B-6EB0D0260E52}"
+	ProjectSection(SolutionItems) = preProject
+		Scaffolding.txt = Scaffolding.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +54,14 @@ Global
 		{AC1BCC70-8FD5-42B2-985B-963DCE9DEC6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC1BCC70-8FD5-42B2-985B-963DCE9DEC6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC1BCC70-8FD5-42B2-985B-963DCE9DEC6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA93CE30-CE19-4CBE-895E-4941017443B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA93CE30-CE19-4CBE-895E-4941017443B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA93CE30-CE19-4CBE-895E-4941017443B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA93CE30-CE19-4CBE-895E-4941017443B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D4A7E49-C612-468D-9A97-51DD77771088}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D4A7E49-C612-468D-9A97-51DD77771088}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D4A7E49-C612-468D-9A97-51DD77771088}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D4A7E49-C612-468D-9A97-51DD77771088}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
