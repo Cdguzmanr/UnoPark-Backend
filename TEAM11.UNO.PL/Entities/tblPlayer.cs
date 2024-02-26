@@ -12,7 +12,11 @@ namespace TEAM11.UNO.PL.Entities
         public bool IsComputerPlayer { get; set; }
 
         // Connection among tables
-        public virtual tblUser UserId { get; set; }
-        public virtual tblGame GameId {  get; set; }
+        public Guid UserId { get; set; }
+        public Guid GameId { get; set; }
+        public virtual tblUser User { get; set; }
+        public virtual tblGame Game {  get; set; }
+
+        public virtual ICollection<tblPlayerCard> Playercards { get; set; }
     }
 }
