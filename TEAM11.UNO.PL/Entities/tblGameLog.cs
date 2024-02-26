@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TEAM11.UNO.PL.Entities
 {
-    public class tblGameLog
+    public class tblGameLog : IEntity
     {
         public Guid Id { get; set; }
         public string Description {  get; set; }
