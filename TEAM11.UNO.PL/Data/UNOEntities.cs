@@ -13,12 +13,12 @@ namespace TEAM11.UNO.PL.Data
     {
         // Ain't got a clue about the "size" of the guid that we need. How do we figure that out?
 
-        Guid[] cardId = new Guid[1];
-        Guid[] gameId = new Guid[1];
-        Guid[] gamelogId = new Guid[1];
-        Guid[] playerId = new Guid[1];
-        Guid[] playercardId = new Guid[1];
-        Guid[] userId = new Guid[1];
+        Guid[] cardId = new Guid[4];
+        Guid[] gameId = new Guid[4];
+        Guid[] gamelogId = new Guid[3];
+        Guid[] playerId = new Guid[4];
+        Guid[] playercardId = new Guid[54];
+        Guid[] userId = new Guid[4];
 
         public virtual DbSet<tblCard> tblCards { get; set; }
         public virtual DbSet<tblGame> tblGames { get; set; }
@@ -86,68 +86,68 @@ namespace TEAM11.UNO.PL.Data
                 List<tblCard> cards = new List<tblCard>
                 {
                     // Number cards
-                    new tblCard { Name = "R0", Color = "Red", Type = "Number" },
-                    new tblCard { Name = "R1", Color = "Red", Type = "Number" },
-                    new tblCard { Name = "R2", Color = "Red", Type = "Number" },
-                    new tblCard { Name = "R3", Color = "Red", Type = "Number" },
-                    new tblCard { Name = "R4", Color = "Red", Type = "Number" },
-                    new tblCard { Name = "R5", Color = "Red", Type = "Number" },
-                    new tblCard { Name = "R6", Color = "Red", Type = "Number" },
-                    new tblCard { Name = "R7", Color = "Red", Type = "Number" },
-                    new tblCard { Name = "R8", Color = "Red", Type = "Number" },
-                    new tblCard { Name = "R9", Color = "Red", Type = "Number" },
-                    new tblCard { Name = "B0", Color = "Blue", Type = "Number" },
-                    new tblCard { Name = "B1", Color = "Blue", Type = "Number" },
-                    new tblCard { Name = "B2", Color = "Blue", Type = "Number" },
-                    new tblCard { Name = "B3", Color = "Blue", Type = "Number" },
-                    new tblCard { Name = "B4", Color = "Blue", Type = "Number" },
-                    new tblCard { Name = "B5", Color = "Blue", Type = "Number" },
-                    new tblCard { Name = "B6", Color = "Blue", Type = "Number" },
-                    new tblCard { Name = "B7", Color = "Blue", Type = "Number" },
-                    new tblCard { Name = "B8", Color = "Blue", Type = "Number" },
-                    new tblCard { Name = "B9", Color = "Blue", Type = "Number" },
-                    new tblCard { Name = "Y0", Color = "Yellow", Type = "Number" },
-                    new tblCard { Name = "Y1", Color = "Yellow", Type = "Number" },
-                    new tblCard { Name = "Y2", Color = "Yellow", Type = "Number" },
-                    new tblCard { Name = "Y3", Color = "Yellow", Type = "Number" },
-                    new tblCard { Name = "Y4", Color = "Yellow", Type = "Number" },
-                    new tblCard { Name = "Y5", Color = "Yellow", Type = "Number" },
-                    new tblCard { Name = "Y6", Color = "Yellow", Type = "Number" },
-                    new tblCard { Name = "Y7", Color = "Yellow", Type = "Number" },
-                    new tblCard { Name = "Y8", Color = "Yellow", Type = "Number" },
-                    new tblCard { Name = "Y9", Color = "Yellow", Type = "Number" },
-                    new tblCard { Name = "G0", Color = "Green", Type = "Number" },
-                    new tblCard { Name = "G1", Color = "Green", Type = "Number" },
-                    new tblCard { Name = "G2", Color = "Green", Type = "Number" },
-                    new tblCard { Name = "G3", Color = "Green", Type = "Number" },
-                    new tblCard { Name = "G4", Color = "Green", Type = "Number" },
-                    new tblCard { Name = "G5", Color = "Green", Type = "Number" },
-                    new tblCard { Name = "G6", Color = "Green", Type = "Number" },
-                    new tblCard { Name = "G7", Color = "Green", Type = "Number" },
-                    new tblCard { Name = "G8", Color = "Green", Type = "Number" },
-                    new tblCard { Name = "G9", Color = "Green", Type = "Number" },
+                    new tblCard { Id = playercardId[0], Name = "R0", Color = "Red", Type = "Number" },
+                    new tblCard { Id = playercardId[1], Name = "R1", Color = "Red", Type = "Number" },
+                    new tblCard { Id = playercardId[2], Name = "R2", Color = "Red", Type = "Number" },
+                    new tblCard { Id = playercardId[3], Name = "R3", Color = "Red", Type = "Number" },
+                    new tblCard { Id = playercardId[4], Name = "R4", Color = "Red", Type = "Number" },
+                    new tblCard { Id = playercardId[5], Name = "R5", Color = "Red", Type = "Number" },
+                    new tblCard { Id = playercardId[6], Name = "R6", Color = "Red", Type = "Number" },
+                    new tblCard { Id = playercardId[7], Name = "R7", Color = "Red", Type = "Number" },
+                    new tblCard { Id = playercardId[8], Name = "R8", Color = "Red", Type = "Number" },
+                    new tblCard { Id = playercardId[9], Name = "R9", Color = "Red", Type = "Number" },
+                    new tblCard { Id = playercardId[10], Name = "B0", Color = "Blue", Type = "Number" },
+                    new tblCard { Id = playercardId[11], Name = "B1", Color = "Blue", Type = "Number" },
+                    new tblCard { Id = playercardId[12], Name = "B2", Color = "Blue", Type = "Number" },
+                    new tblCard { Id = playercardId[13], Name = "B3", Color = "Blue", Type = "Number" },
+                    new tblCard { Id = playercardId[14], Name = "B4", Color = "Blue", Type = "Number" },
+                    new tblCard { Id = playercardId[15], Name = "B5", Color = "Blue", Type = "Number" },
+                    new tblCard { Id = playercardId[16], Name = "B6", Color = "Blue", Type = "Number" },
+                    new tblCard { Id = playercardId[17], Name = "B7", Color = "Blue", Type = "Number" },
+                    new tblCard { Id = playercardId[18], Name = "B8", Color = "Blue", Type = "Number" },
+                    new tblCard { Id = playercardId[19], Name = "B9", Color = "Blue", Type = "Number" },
+                    new tblCard { Id = playercardId[20], Name = "Y0", Color = "Yellow", Type = "Number" },
+                    new tblCard { Id = playercardId[21], Name = "Y1", Color = "Yellow", Type = "Number" },
+                    new tblCard { Id = playercardId[22], Name = "Y2", Color = "Yellow", Type = "Number" },
+                    new tblCard { Id = playercardId[23], Name = "Y3", Color = "Yellow", Type = "Number" },
+                    new tblCard { Id = playercardId[24], Name = "Y4", Color = "Yellow", Type = "Number" },
+                    new tblCard { Id = playercardId[25], Name = "Y5", Color = "Yellow", Type = "Number" },
+                    new tblCard { Id = playercardId[26], Name = "Y6", Color = "Yellow", Type = "Number" },
+                    new tblCard { Id = playercardId[27], Name = "Y7", Color = "Yellow", Type = "Number" },
+                    new tblCard { Id = playercardId[28], Name = "Y8", Color = "Yellow", Type = "Number" },
+                    new tblCard { Id = playercardId[29], Name = "Y9", Color = "Yellow", Type = "Number" },
+                    new tblCard { Id = playercardId[30], Name = "G0", Color = "Green", Type = "Number" },
+                    new tblCard { Id = playercardId[31], Name = "G1", Color = "Green", Type = "Number" },
+                    new tblCard { Id = playercardId[32], Name = "G2", Color = "Green", Type = "Number" },
+                    new tblCard { Id = playercardId[33], Name = "G3", Color = "Green", Type = "Number" },
+                    new tblCard { Id = playercardId[34], Name = "G4", Color = "Green", Type = "Number" },
+                    new tblCard { Id = playercardId[35], Name = "G5", Color = "Green", Type = "Number" },
+                    new tblCard { Id = playercardId[36], Name = "G6", Color = "Green", Type = "Number" },
+                    new tblCard { Id = playercardId[37], Name = "G7", Color = "Green", Type = "Number" },
+                    new tblCard { Id = playercardId[38], Name = "G8", Color = "Green", Type = "Number" },
+                    new tblCard { Id = playercardId[39], Name = "G9", Color = "Green", Type = "Number" },
 
                     // Action cards
 
                     // What names would we like these cards to be below? The ones above makes sense for LETTER (COLOR) then Number...
                     // But what about the cards below?
 
-                    new tblCard { Name = "Skip", Color = "Red", Type = "Action" },
-                    new tblCard { Name = "Reverse", Color = "Red", Type = "Action" },
-                    new tblCard { Name = "DrawTwo", Color = "Red", Type = "Action" },
-                    new tblCard { Name = "Skip", Color = "Blue", Type = "Action" },
-                    new tblCard { Name = "Reverse", Color = "Blue", Type = "Action" },
-                    new tblCard { Name = "DrawTwo", Color = "Blue", Type = "Action" },
-                    new tblCard { Name = "Skip", Color = "Yellow", Type = "Action" },
-                    new tblCard { Name = "Reverse", Color = "Yellow", Type = "Action" },
-                    new tblCard { Name = "DrawTwo", Color = "Yellow", Type = "Action" },
-                    new tblCard { Name = "Skip", Color = "Green", Type = "Action" },
-                    new tblCard { Name = "Reverse", Color = "Green", Type = "Action" },
-                    new tblCard { Name = "DrawTwo", Color = "Green", Type = "Action" },
+                    new tblCard { Id = playercardId[40], Name = "Skip", Color = "Red", Type = "Action" },
+                    new tblCard { Id = playercardId[41], Name = "Reverse", Color = "Red", Type = "Action" },
+                    new tblCard { Id = playercardId[42], Name = "DrawTwo", Color = "Red", Type = "Action" },
+                    new tblCard { Id = playercardId[43], Name = "Skip", Color = "Blue", Type = "Action" },
+                    new tblCard { Id = playercardId[44], Name = "Reverse", Color = "Blue", Type = "Action" },
+                    new tblCard { Id = playercardId[45], Name = "DrawTwo", Color = "Blue", Type = "Action" },
+                    new tblCard { Id = playercardId[46], Name = "Skip", Color = "Yellow", Type = "Action" },
+                    new tblCard { Id = playercardId[47], Name = "Reverse", Color = "Yellow", Type = "Action" },
+                    new tblCard { Id = playercardId[48], Name = "DrawTwo", Color = "Yellow", Type = "Action" },
+                    new tblCard { Id = playercardId[49], Name = "Skip", Color = "Green", Type = "Action" },
+                    new tblCard { Id = playercardId[50], Name = "Reverse", Color = "Green", Type = "Action" },
+                    new tblCard { Id = playercardId[51], Name = "DrawTwo", Color = "Green", Type = "Action" },
 
                     // Wild cards
-                    new tblCard { Name = "Wild", Color = "Wild", Type = "Wild" },
-                    new tblCard { Name = "Wild Draw Four", Color = "Wild", Type = "Wild" }
+                    new tblCard { Id = playercardId[52], Name = "Wild", Color = "Wild", Type = "Wild" },
+                    new tblCard { Id = playercardId[53], Name = "Wild Draw Four", Color = "Wild", Type = "Wild" }
 
                 };
                 modelBuilder.Entity<tblCard>().HasData(cards);
@@ -187,9 +187,9 @@ namespace TEAM11.UNO.PL.Data
 
                 List<tblGame> games = new List<tblGame>
                 {
-                    new tblGame { Name = "Game1", IsPaused = true },
-                    new tblGame { Name = "Game2", IsPaused = true },
-                    new tblGame { Name = "Game3", IsPaused = true },
+                    new tblGame { Id = gameId[0], Name = "Game-Completed", IsPaused = true, CurrentTurnUserId = userId[0] },
+                    new tblGame { Id = gameId[1], Name = "Game-Completed", IsPaused = true, CurrentTurnUserId = userId[1] },
+                    new tblGame { Id = gameId[2], Name = "Game-Incompleted", IsPaused = false, CurrentTurnUserId = userId[2] },
                 };
 
                 modelBuilder.Entity<tblGame>().HasData(games);
@@ -226,9 +226,9 @@ namespace TEAM11.UNO.PL.Data
 
                 List<tblGameLog> gamelogs = new List<tblGameLog>
                 {
-                    new tblGameLog { Description = "Game 1 Log", Timestamp = "12:00pm" },
-                    new tblGameLog { Description = "Game 2 Log", Timestamp = "1:00pm" },
-                    new tblGameLog { Description = "Game 3 Log", Timestamp = "2:00pm" }
+                    new tblGameLog { Id = gamelogId[0], Description = "Game 1 Log", Timestamp = "12:00pm", GameId = gameId[0] },
+                    new tblGameLog { Id = gamelogId[1], Description = "Game 2 Log", Timestamp = "1:00pm", GameId = gameId[1] },
+                    new tblGameLog { Id = gamelogId[2], Description = "Game 3 Log", Timestamp = "2:00pm", GameId = gameId[2] }
                 };
 
                 modelBuilder.Entity<tblGame>().HasData(gamelogs);
@@ -265,10 +265,10 @@ namespace TEAM11.UNO.PL.Data
 
                 List<tblPlayer> players = new List<tblPlayer>
                 {
-                    new tblPlayer { IsComputerPlayer = false },
-                    new tblPlayer { IsComputerPlayer = false },
-                    new tblPlayer { IsComputerPlayer = false },
-                    new tblPlayer { IsComputerPlayer = true }
+                    new tblPlayer { Id = playerId[0], IsComputerPlayer = false, UserId = userId[0] },
+                    new tblPlayer { Id = playerId[1], IsComputerPlayer = false, UserId = userId[1] },
+                    new tblPlayer { Id = playerId[2], IsComputerPlayer = false, UserId = userId[2] },
+                    new tblPlayer { Id = playerId[3], IsComputerPlayer = true, UserId = userId[3] }
                 };
 
                 modelBuilder.Entity<tblPlayer>().HasData(players);
@@ -300,7 +300,10 @@ namespace TEAM11.UNO.PL.Data
 
                 List<tblPlayerCard> playerCards = new List<tblPlayerCard>
                 {
-                    
+                    new tblPlayerCard { Id = playercardId[0], CardId = cardId[0], PlayerId = playerId[0] },
+                    new tblPlayerCard { Id = playercardId[1], CardId = cardId[1], PlayerId = playerId[1] },
+                    new tblPlayerCard { Id = playercardId[2], CardId = cardId[2], PlayerId = playerId[2] },
+                    new tblPlayerCard { Id = playercardId[3], CardId = cardId[3], PlayerId = playerId[3] },
                 };
 
                 modelBuilder.Entity<tblPlayerCard>().HasData(playerCards);
@@ -342,9 +345,10 @@ namespace TEAM11.UNO.PL.Data
 
                 List<tblUser> users = new List<tblUser>
                 {
-                    new tblUser { Username = "Austin", Password = GetHash("Austin"), FirstName = "Austin", LastName = "Steffes"},
-                    new tblUser { Username = "Carlos", Password = GetHash("Carlos"), FirstName = "Carlos", LastName = "Guzman"},
-                    new tblUser { Username = "Brian", Password = GetHash("Brian"), FirstName = "Brian", LastName = "Foote"}
+                    new tblUser { Id = userId[0], Username = "Austin", Password = GetHash("Austin"), FirstName = "Austin", LastName = "Steffes"},
+                    new tblUser { Id = userId[1], Username = "Carlos", Password = GetHash("Carlos"), FirstName = "Carlos", LastName = "Guzman"},
+                    new tblUser { Id = userId[2], Username = "Brian", Password = GetHash("Brian"), FirstName = "Brian", LastName = "Foote"},
+                    new tblUser { Id = userId[3], Username = "Bot", Password = GetHash("Bot"), FirstName = "Bot", LastName = "Bot"}
                 };
 
                 modelBuilder.Entity<tblUser>().HasData(users);
