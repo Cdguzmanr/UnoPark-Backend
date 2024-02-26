@@ -12,5 +12,10 @@ namespace TEAM11.UNO.PL.Entities
         public string Name { get; set; }
         public string Color { get; set; }
         public string Type { get; set; }
+
+        // Connection among tables
+        public virtual ICollection<tblPlayerCard> Playercards { get; set; }
+
+
     }
 }

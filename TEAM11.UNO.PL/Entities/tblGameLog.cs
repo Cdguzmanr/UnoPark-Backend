@@ -13,6 +13,7 @@ namespace TEAM11.UNO.PL.Entities
         public string Timestamp { get; set; }
 
         // Connection among tables
-        public virtual tblGame GameId { get; set; }
+        public Guid GameId { get; set; }
+        public virtual tblGame Game { get; set; }
     }
 }

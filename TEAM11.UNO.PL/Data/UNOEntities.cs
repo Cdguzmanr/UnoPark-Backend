@@ -134,16 +134,16 @@ namespace TEAM11.UNO.PL.Data
 
                     new tblCard { Name = "Skip", Color = "Red", Type = "Action" },
                     new tblCard { Name = "Reverse", Color = "Red", Type = "Action" },
-                    new tblCard { Name = "Draw Two", Color = "Red", Type = "Action" },
+                    new tblCard { Name = "DrawTwo", Color = "Red", Type = "Action" },
                     new tblCard { Name = "Skip", Color = "Blue", Type = "Action" },
                     new tblCard { Name = "Reverse", Color = "Blue", Type = "Action" },
-                    new tblCard { Name = "Draw Two", Color = "Blue", Type = "Action" },
+                    new tblCard { Name = "DrawTwo", Color = "Blue", Type = "Action" },
                     new tblCard { Name = "Skip", Color = "Yellow", Type = "Action" },
                     new tblCard { Name = "Reverse", Color = "Yellow", Type = "Action" },
-                    new tblCard { Name = "Draw Two", Color = "Yellow", Type = "Action" },
+                    new tblCard { Name = "DrawTwo", Color = "Yellow", Type = "Action" },
                     new tblCard { Name = "Skip", Color = "Green", Type = "Action" },
                     new tblCard { Name = "Reverse", Color = "Green", Type = "Action" },
-                    new tblCard { Name = "Draw Two", Color = "Green", Type = "Action" },
+                    new tblCard { Name = "DrawTwo", Color = "Green", Type = "Action" },
 
                     // Wild cards
                     new tblCard { Name = "Wild", Color = "Wild", Type = "Wild" },
@@ -175,11 +175,21 @@ namespace TEAM11.UNO.PL.Data
                     .IsRequired()
                     .HasDefaultValue(false);
 
+                // Double checking here, CurrentTurnUserId is a foreign key to Id in the User table?
+                // Right since we need to get the "current" player.
+
+                entity.HasOne(d => d.CurrentTurnUserId)
+                  .WithMany(p => p.Games)
+
+                  // Is this suppose to be CurrentTurnUserId or Id, I think Id.
+                  .HasForeignKey(d => d.UserId)
+                  .HasConstraintName("fk_tblGame_UserId");
+
                 List<tblGame> games = new List<tblGame>
                 {
-                    new tblGame { Name = "", IsPaused = true },
-                    new tblGame { Name = "", IsPaused = true },
-                    new tblGame { Name = "", IsPaused = true },
+                    new tblGame { Name = "Game1", IsPaused = true },
+                    new tblGame { Name = "Game2", IsPaused = true },
+                    new tblGame { Name = "Game3", IsPaused = true },
                 };
 
                 modelBuilder.Entity<tblGame>().HasData(games);
@@ -209,11 +219,16 @@ namespace TEAM11.UNO.PL.Data
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
+                entity.HasOne(d => d.Game)
+                  .WithMany(p => p.Gamelogs)
+                  .HasForeignKey(d => d.GameId)
+                  .HasConstraintName("fk_tblGameLog_GameId");
+
                 List<tblGameLog> gamelogs = new List<tblGameLog>
                 {
-                    new tblGameLog { Description = "", Timestamp = "" },
-                    new tblGameLog { Description = "", Timestamp = "" },
-                    new tblGameLog { Description = "", Timestamp = "" }
+                    new tblGameLog { Description = "Game 1 Log", Timestamp = "12:00pm" },
+                    new tblGameLog { Description = "Game 2 Log", Timestamp = "1:00pm" },
+                    new tblGameLog { Description = "Game 3 Log", Timestamp = "2:00pm" }
                 };
 
                 modelBuilder.Entity<tblGame>().HasData(gamelogs);
@@ -238,11 +253,22 @@ namespace TEAM11.UNO.PL.Data
                     .IsRequired()
                     .HasDefaultValue(false);
 
+                entity.HasOne(d => d.User)
+                  .WithMany(p => p.Players)
+                  .HasForeignKey(d => d.UserId)
+                  .HasConstraintName("fk_tblUser_Id");
+
+                entity.HasOne(d => d.Game)
+                  .WithMany(p => p.Players)
+                  .HasForeignKey(d => d.GameId)
+                  .HasConstraintName("fk_tblGame_Id");
+
                 List<tblPlayer> players = new List<tblPlayer>
                 {
                     new tblPlayer { IsComputerPlayer = false },
                     new tblPlayer { IsComputerPlayer = false },
-                    new tblPlayer { IsComputerPlayer = false }
+                    new tblPlayer { IsComputerPlayer = false },
+                    new tblPlayer { IsComputerPlayer = true }
                 };
 
                 modelBuilder.Entity<tblPlayer>().HasData(players);
@@ -261,6 +287,16 @@ namespace TEAM11.UNO.PL.Data
                 entity.ToTable("tblPlayerCard");
 
                 entity.Property(e => e.Id).ValueGeneratedNever();
+
+                entity.HasOne(d => d.Player)
+                  .WithMany(p => p.Playercards)
+                  .HasForeignKey(d => d.PlayerId)
+                  .HasConstraintName("fk_tblPlayerCard_PlayerId");
+
+                entity.HasOne(d => d.Card)
+                  .WithMany(p => p.Playercards)
+                  .HasForeignKey(d => d.CardId)
+                  .HasConstraintName("fk_tblPlayerCard_CardId");
 
                 List<tblPlayerCard> playerCards = new List<tblPlayerCard>
                 {
