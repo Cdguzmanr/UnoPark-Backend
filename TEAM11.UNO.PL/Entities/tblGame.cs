@@ -15,7 +15,6 @@ namespace TEAM11.UNO.PL.Entities
         // Connection among tables.
         public Guid UserId { get; set; }
         public virtual tblUser CurrentTurnUserId { get; set; }
-
         public virtual ICollection<tblGameLog> Gamelogs { get; set; }
         public virtual ICollection<tblPlayer> Players { get; set; }
     }

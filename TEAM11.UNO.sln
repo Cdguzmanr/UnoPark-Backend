@@ -21,7 +21,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TEAM11.UNO.BL.Models", "TEA
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{7EE24CC1-8AE5-4566-973B-6EB0D0260E52}"
 	ProjectSection(SolutionItems) = preProject
-		Scaffolding.txt = Scaffolding.txt
+		TextFile1.txt = TextFile1.txt
 	EndProjectSection
 EndProject
 Global
