@@ -266,7 +266,7 @@ namespace TEAM11.UNO.PL.Data
 
                 List<tblPlayer> players = new List<tblPlayer>
                 {
-                    new tblPlayer { Id = playerId[0], IsComputerPlayer = false, UserId = userId[0] },
+                    new tblPlayer { Id = playerId[0], IsComputerPlayer = false, UserId = userId[0], GameId = gameId[0] },
                 };
 
                 modelBuilder.Entity<tblPlayer>().HasData(players);
