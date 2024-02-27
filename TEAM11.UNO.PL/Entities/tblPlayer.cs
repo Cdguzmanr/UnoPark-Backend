@@ -15,7 +15,7 @@ namespace TEAM11.UNO.PL.Entities
         public Guid UserId { get; set; }
         public Guid GameId { get; set; }
         public virtual tblUser User { get; set; }
-        public virtual tblGame Game {  get; set; }
+        public virtual tblGame Game { get; set; }
 
         public virtual ICollection<tblPlayerCard> Playercards { get; set; }
     }

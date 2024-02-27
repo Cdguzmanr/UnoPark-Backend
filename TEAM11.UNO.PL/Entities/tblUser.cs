@@ -19,7 +19,6 @@ namespace TEAM11.UNO.PL.Entities
         public string LastName { get; set; }
 
         // Connection among tables
-        public virtual ICollection<tblGame> Games { get; set; }
         public virtual ICollection<tblPlayer> Players { get; set; }
     }
 }

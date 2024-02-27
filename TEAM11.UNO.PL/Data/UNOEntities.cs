@@ -179,17 +179,18 @@ namespace TEAM11.UNO.PL.Data
                 // Double checking here, CurrentTurnUserId is a foreign key to Id in the User table?
                 // Right since we need to get the "current" player.
 
+                // Ensure that the relationship is correctly defined
                 entity.HasOne(d => d.CurrentTurnUserId)
-                  .WithMany(p => p.Games)
-                  .HasForeignKey(d => d.UserId)
-                  .HasConstraintName("fk_tblGame_UserId");
+                    .WithMany() // Assuming there's no navigation property from tblUser to tblGame
+                    .HasForeignKey(d => d.UserId)
+                    .HasConstraintName("fk_tblGame_UserId");
+
 
                 List<tblGame> games = new List<tblGame>
                 {
-                    new tblGame { Id = gameId[0], Name = "Game 1", IsPaused = true, CurrentTurnUserId =
-                    new tblUser { Id = userId[0] } },
-                    //new tblGame { Id = gameId[1], Name = "Game 2", IsPaused = true, UserId = userId[1] },
-                    //new tblGame { Id = gameId[2], Name = "Game 3", IsPaused = false, UserId = userId[2] }
+                    new tblGame { Id = gameId[0], Name = "Game 1", IsPaused = true, UserId = userId[0] },
+                    new tblGame { Id = gameId[1], Name = "Game 2", IsPaused = true, UserId = userId[1] },
+                    new tblGame { Id = gameId[2], Name = "Game 3", IsPaused = true, UserId = userId[2] },
                 };
 
                 modelBuilder.Entity<tblGame>().HasData(games);
@@ -231,7 +232,7 @@ namespace TEAM11.UNO.PL.Data
                     new tblGameLog { Id = gamelogId[2], Description = "Game 3 Log", Timestamp = "2:00pm", GameId = gameId[2] }
                 };
 
-                modelBuilder.Entity<tblGame>().HasData(gamelogs);
+                modelBuilder.Entity<tblGameLog>().HasData(gamelogs);
 
             });
         }
@@ -256,19 +257,16 @@ namespace TEAM11.UNO.PL.Data
                 entity.HasOne(d => d.User)
                   .WithMany(p => p.Players)
                   .HasForeignKey(d => d.UserId)
-                  .HasConstraintName("fk_tblUser_Id");
+                  .HasConstraintName("fk_tblPlayer_UserId");
 
                 entity.HasOne(d => d.Game)
                   .WithMany(p => p.Players)
                   .HasForeignKey(d => d.GameId)
-                  .HasConstraintName("fk_tblGame_Id");
+                  .HasConstraintName("fk_tblPlayer_GameId");
 
                 List<tblPlayer> players = new List<tblPlayer>
                 {
-                    new tblPlayer { Id = playerId[0], IsComputerPlayer = false, UserId = userId[0] },
-                    new tblPlayer { Id = playerId[1], IsComputerPlayer = false, UserId = userId[1] },
-                    new tblPlayer { Id = playerId[2], IsComputerPlayer = false, UserId = userId[2] },
-                    new tblPlayer { Id = playerId[3], IsComputerPlayer = true, UserId = userId[3] }
+                    new tblPlayer { Id = playerId[0], IsComputerPlayer = false, UserId = userId[0], GameId = gameId[0] },
                 };
 
                 modelBuilder.Entity<tblPlayer>().HasData(players);
