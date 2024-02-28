@@ -173,24 +173,26 @@ namespace TEAM11.UNO.PL.Data
                     .IsUnicode(false);
 
                 entity.Property(e => e.IsPaused)
-                    .IsRequired()
-                    .HasDefaultValue(false);
+                    .IsRequired();
+                    
 
                 // Double checking here, CurrentTurnUserId is a foreign key to Id in the User table?
                 // Right since we need to get the "current" player.
 
                 // Ensure that the relationship is correctly defined
-                entity.HasOne(d => d.CurrentTurnUserId)
-                    .WithMany() // Assuming there's no navigation property from tblUser to tblGame
-                    .HasForeignKey(d => d.UserId)
-                    .HasConstraintName("fk_tblGame_UserId");
+
+                entity.HasOne(d => d.CurrentTurnUser)
+                    .WithMany()
+                    .HasForeignKey(d => d.CurrentTurnUserId)
+                    .HasConstraintName("fk_tblGame_CurrentTurnUserId")
+                    .OnDelete(DeleteBehavior.Restrict);
 
 
                 List<tblGame> games = new List<tblGame>
                 {
-                    new tblGame { Id = gameId[0], Name = "Game 1", IsPaused = true, UserId = userId[0] },
-                    new tblGame { Id = gameId[1], Name = "Game 2", IsPaused = true, UserId = userId[1] },
-                    new tblGame { Id = gameId[2], Name = "Game 3", IsPaused = true, UserId = userId[2] },
+                    new tblGame { Id = gameId[0], Name = "Game 1", IsPaused = true, CurrentTurnUserId = playerId[0] },
+                    new tblGame { Id = gameId[1], Name = "Game 2", IsPaused = true, CurrentTurnUserId = playerId[1] },
+                    new tblGame { Id = gameId[2], Name = "Game 3", IsPaused = true, CurrentTurnUserId = playerId[2] },
                 };
 
                 modelBuilder.Entity<tblGame>().HasData(games);
@@ -255,14 +257,16 @@ namespace TEAM11.UNO.PL.Data
                     .HasDefaultValue(false);
 
                 entity.HasOne(d => d.User)
-                  .WithMany(p => p.Players)
-                  .HasForeignKey(d => d.UserId)
-                  .HasConstraintName("fk_tblPlayer_UserId");
+                    .WithMany(p => p.Players)
+                    .HasForeignKey(d => d.UserId)
+                    .HasConstraintName("fk_tblPlayer_UserId")
+                    .OnDelete(DeleteBehavior.Restrict);
 
                 entity.HasOne(d => d.Game)
-                  .WithMany(p => p.Players)
-                  .HasForeignKey(d => d.GameId)
-                  .HasConstraintName("fk_tblPlayer_GameId");
+                    .WithMany(p => p.Players)
+                    .HasForeignKey(d => d.GameId)
+                    .HasConstraintName("fk_tblPlayer_GameId")
+                    .OnDelete(DeleteBehavior.Restrict);
 
                 List<tblPlayer> players = new List<tblPlayer>
                 {
