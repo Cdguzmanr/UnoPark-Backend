@@ -35,7 +35,6 @@ namespace TEAM11.UNO.PL.Data
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
         }
-
         public UNOEntities()
         {
         }
@@ -44,13 +43,16 @@ namespace TEAM11.UNO.PL.Data
         {
 
             base.OnModelCreating(modelBuilder);
-
-            CreateCards(modelBuilder);
-            CreateGames(modelBuilder);
-            CreateGameLogs(modelBuilder);
-            CreatePlayers(modelBuilder);
-            CreatePlayerCards(modelBuilder);
             CreateUsers(modelBuilder);
+  
+            CreateGames(modelBuilder);
+            
+
+            CreatePlayers(modelBuilder);
+            CreateCards(modelBuilder);
+            CreatePlayerCards(modelBuilder);
+
+            CreateGameLogs(modelBuilder);
 
         }
 
@@ -195,6 +197,7 @@ namespace TEAM11.UNO.PL.Data
                     new tblGame { Id = gameId[2], Name = "Game 3", IsPaused = true, CurrentTurnUserId = playerId[2] },
                 };
 
+
                 modelBuilder.Entity<tblGame>().HasData(games);
 
             });
@@ -271,6 +274,9 @@ namespace TEAM11.UNO.PL.Data
                 List<tblPlayer> players = new List<tblPlayer>
                 {
                     new tblPlayer { Id = playerId[0], IsComputerPlayer = false, UserId = userId[0], GameId = gameId[0] },
+                    new tblPlayer { Id = playerId[1], IsComputerPlayer = false, UserId = userId[0], GameId = gameId[1] },
+                    new tblPlayer { Id = playerId[2], IsComputerPlayer = false, UserId = userId[0], GameId = gameId[2] },
+
                 };
 
                 modelBuilder.Entity<tblPlayer>().HasData(players);
