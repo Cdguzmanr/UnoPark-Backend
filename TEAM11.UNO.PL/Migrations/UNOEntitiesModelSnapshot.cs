@@ -53,378 +53,378 @@ namespace TEAM11.UNO.PL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("6ea7b011-475a-482b-8abd-7bd8633086e5"),
+                            Id = new Guid("8ed12283-e83a-47c4-b8eb-1065da1a9ecb"),
                             Color = "Red",
                             Name = "R0",
                             Type = "Number"
                         },
                         new
                         {
-                            Id = new Guid("578e4f52-6ac3-464c-8b6a-a9e6030556fe"),
+                            Id = new Guid("7330b2c6-e199-4419-abf6-ea781a461eda"),
                             Color = "Red",
                             Name = "R1",
                             Type = "Number"
                         },
                         new
                         {
-                            Id = new Guid("db2092cc-76c1-4361-94d3-3e6281b95009"),
+                            Id = new Guid("bf974281-f393-4075-b632-3c4279bbaa1d"),
                             Color = "Red",
                             Name = "R2",
                             Type = "Number"
                         },
                         new
                         {
-                            Id = new Guid("85d89e42-358a-4feb-ad11-10096ef3221f"),
+                            Id = new Guid("ecf7735d-b887-45c6-8206-0feb3eb24bcd"),
                             Color = "Red",
                             Name = "R3",
                             Type = "Number"
                         },
                         new
                         {
-                            Id = new Guid("f6362289-b5b7-4231-81d3-155f0dd380d9"),
+                            Id = new Guid("4a924450-1485-47f8-a2ee-ea34a084b26b"),
                             Color = "Red",
                             Name = "R4",
                             Type = "Number"
                         },
                         new
                         {
-                            Id = new Guid("5c25bcc8-1098-427b-b760-d5bfc6ea0cd3"),
+                            Id = new Guid("beca98e7-0145-46b0-a80d-5f1a4329c3f2"),
                             Color = "Red",
                             Name = "R5",
                             Type = "Number"
                         },
                         new
                         {
-                            Id = new Guid("da583c0c-003c-4a9a-85db-a616fb4b77f7"),
+                            Id = new Guid("a32ad6da-1569-44c7-a4f2-5ebd923bd72d"),
                             Color = "Red",
                             Name = "R6",
                             Type = "Number"
                         },
                         new
                         {
-                            Id = new Guid("7b413f17-7ecb-4100-9873-66a5d21d3bb5"),
+                            Id = new Guid("d0ff2336-2de0-4ee1-a6a8-c558019817db"),
                             Color = "Red",
                             Name = "R7",
                             Type = "Number"
                         },
                         new
                         {
-                            Id = new Guid("88b747f3-5e79-4adc-be01-15d3d0ab27aa"),
+                            Id = new Guid("ff37fd44-e053-4d27-aff7-0be8e180c2c5"),
                             Color = "Red",
                             Name = "R8",
                             Type = "Number"
                         },
                         new
                         {
-                            Id = new Guid("7a830362-9736-49da-a00e-674223bc1a47"),
+                            Id = new Guid("677ffb76-9cc9-426e-8cbb-67f197b18619"),
                             Color = "Red",
                             Name = "R9",
                             Type = "Number"
                         },
                         new
                         {
-                            Id = new Guid("9bb2cdbc-638b-4718-87bc-e1fcfbe3a270"),
+                            Id = new Guid("788d6820-8f92-43b1-9d37-f7175902e32e"),
                             Color = "Blue",
                             Name = "B0",
                             Type = "Number"
                         },
                         new
                         {
-                            Id = new Guid("cacc6cb5-29a9-4bd9-8ef5-c672e628b577"),
+                            Id = new Guid("378e495e-c8f2-41a9-a759-3c2bd929fccc"),
                             Color = "Blue",
                             Name = "B1",
                             Type = "Number"
                         },
                         new
                         {
-                            Id = new Guid("cc532621-820c-450c-9da0-b286e621d476"),
+                            Id = new Guid("a7b46dad-8b44-43fb-b27c-adfd455c6eed"),
                             Color = "Blue",
                             Name = "B2",
                             Type = "Number"
                         },
                         new
                         {
-                            Id = new Guid("09d7e46e-9c9f-4896-81b8-fe8023b12edb"),
+                            Id = new Guid("e8dec34a-fe6d-4398-9db4-0e5595f6a45c"),
                             Color = "Blue",
                             Name = "B3",
                             Type = "Number"
                         },
                         new
                         {
-                            Id = new Guid("1a87130b-c662-417a-8d4c-788567ad619b"),
+                            Id = new Guid("ae0a3b13-bcd0-4f45-b17b-2ff93a44e9e3"),
                             Color = "Blue",
                             Name = "B4",
                             Type = "Number"
                         },
                         new
                         {
-                            Id = new Guid("3199c101-d608-4c70-aa5e-37f64a321bf7"),
+                            Id = new Guid("0a857abf-af8c-48ad-8cdc-08d9506e82a0"),
                             Color = "Blue",
                             Name = "B5",
                             Type = "Number"
                         },
                         new
                         {
-                            Id = new Guid("47e706d2-eaf6-440b-b751-33d717c2e31a"),
+                            Id = new Guid("d7d4ebe4-2b92-4578-8e3f-209621a754d7"),
                             Color = "Blue",
                             Name = "B6",
                             Type = "Number"
                         },
                         new
                         {
-                            Id = new Guid("7740f5e5-af1c-46ff-9dde-3095e18e9d58"),
+                            Id = new Guid("86bdfce8-2b8c-497f-b927-19be6b118155"),
                             Color = "Blue",
                             Name = "B7",
                             Type = "Number"
                         },
                         new
                         {
-                            Id = new Guid("fe5231f0-c6c9-493b-8151-57654cb75dbf"),
+                            Id = new Guid("fb5c4fbb-7be9-456e-ae62-1096e1ddefc0"),
                             Color = "Blue",
                             Name = "B8",
                             Type = "Number"
                         },
                         new
                         {
-                            Id = new Guid("de0f9384-2a8c-4362-97d7-b2fcfe8f9ac1"),
+                            Id = new Guid("d891738b-00e2-4271-acf4-6cef6a0d5cdc"),
                             Color = "Blue",
                             Name = "B9",
                             Type = "Number"
                         },
                         new
                         {
-                            Id = new Guid("7174497e-41cb-42ec-9d90-6a0cebef32fd"),
+                            Id = new Guid("acb45178-ccf3-4dd5-945f-8d990872e8e3"),
                             Color = "Yellow",
                             Name = "Y0",
                             Type = "Number"
                         },
                         new
                         {
-                            Id = new Guid("a8cf9083-724b-4864-be12-ab54e2243cdf"),
+                            Id = new Guid("5c249c9f-3db3-49d7-90e0-bb16b0100580"),
                             Color = "Yellow",
                             Name = "Y1",
                             Type = "Number"
                         },
                         new
                         {
-                            Id = new Guid("09cedbc8-6078-4b74-a593-4e79ce01fc3b"),
+                            Id = new Guid("5f8a0ff7-fda1-4e86-9c16-b0a92c6ef07c"),
                             Color = "Yellow",
                             Name = "Y2",
                             Type = "Number"
                         },
                         new
                         {
-                            Id = new Guid("e002ef75-3af7-4aae-9dd1-8a7428344c3e"),
+                            Id = new Guid("c41ee893-d479-4eb1-809d-2c63aa240c83"),
                             Color = "Yellow",
                             Name = "Y3",
                             Type = "Number"
                         },
                         new
                         {
-                            Id = new Guid("9b98d458-e504-40fe-b2fe-04538ada7f0f"),
+                            Id = new Guid("c365b2e4-4923-4915-844e-1263484d5708"),
                             Color = "Yellow",
                             Name = "Y4",
                             Type = "Number"
                         },
                         new
                         {
-                            Id = new Guid("1bdb4c9d-9c70-4b6a-af36-94d641b517a9"),
+                            Id = new Guid("5cc0af94-7df4-4dbe-8727-5c19afb9d5bd"),
                             Color = "Yellow",
                             Name = "Y5",
                             Type = "Number"
                         },
                         new
                         {
-                            Id = new Guid("a39f955c-4c77-43fc-9bc8-b2b09c3e1b10"),
+                            Id = new Guid("362bb8f0-23e1-48b4-8d29-b43525e41f7f"),
                             Color = "Yellow",
                             Name = "Y6",
                             Type = "Number"
                         },
                         new
                         {
-                            Id = new Guid("039e430f-6218-4b7a-b4d4-ccf89e35f2e0"),
+                            Id = new Guid("5ae0638b-79e8-4fc6-9b5f-63b8b114228c"),
                             Color = "Yellow",
                             Name = "Y7",
                             Type = "Number"
                         },
                         new
                         {
-                            Id = new Guid("f00810e9-7c67-481e-ace6-d81c7170c6b1"),
+                            Id = new Guid("7b2a5a36-230f-4e36-a718-2f1767d94360"),
                             Color = "Yellow",
                             Name = "Y8",
                             Type = "Number"
                         },
                         new
                         {
-                            Id = new Guid("184de25e-e72e-4425-a20e-dcd714892390"),
+                            Id = new Guid("7e952559-d3eb-4a6f-b339-f2229928ec88"),
                             Color = "Yellow",
                             Name = "Y9",
                             Type = "Number"
                         },
                         new
                         {
-                            Id = new Guid("a9d1451b-e3c4-470a-8aa9-6ea8073bb191"),
+                            Id = new Guid("8ef0604b-3b20-45a3-ba56-23601e5d230f"),
                             Color = "Green",
                             Name = "G0",
                             Type = "Number"
                         },
                         new
                         {
-                            Id = new Guid("3c92ccf6-1793-41cc-8754-2fcf123241b5"),
+                            Id = new Guid("56f1584d-0ee0-4f40-bc6e-607bf8820b5b"),
                             Color = "Green",
                             Name = "G1",
                             Type = "Number"
                         },
                         new
                         {
-                            Id = new Guid("0f727c17-06ba-4c56-a83d-57790044c1e6"),
+                            Id = new Guid("566a834a-0f8d-4d61-b533-d756b302f994"),
                             Color = "Green",
                             Name = "G2",
                             Type = "Number"
                         },
                         new
                         {
-                            Id = new Guid("0afef1c4-fa70-45f1-b637-c6588d57c22b"),
+                            Id = new Guid("bcad1f07-38a5-490b-9143-5d6c9734541e"),
                             Color = "Green",
                             Name = "G3",
                             Type = "Number"
                         },
                         new
                         {
-                            Id = new Guid("cc681382-9aa2-4896-a67d-c8fde0e402c8"),
+                            Id = new Guid("4ac5810b-52c6-44f0-8081-0aad3c39acc5"),
                             Color = "Green",
                             Name = "G4",
                             Type = "Number"
                         },
                         new
                         {
-                            Id = new Guid("a98cf121-8c44-4630-ac55-a98ad3f30d86"),
+                            Id = new Guid("08c8cb79-c74d-46f8-9f73-0f3f0659879e"),
                             Color = "Green",
                             Name = "G5",
                             Type = "Number"
                         },
                         new
                         {
-                            Id = new Guid("fd874b18-f395-4815-b9e5-3f5d7287eff0"),
+                            Id = new Guid("0b254543-651c-467e-b405-2a84fd01ce6a"),
                             Color = "Green",
                             Name = "G6",
                             Type = "Number"
                         },
                         new
                         {
-                            Id = new Guid("f0996e59-cc22-4fc7-9ced-3ba9b753fcbb"),
+                            Id = new Guid("a31cf900-152d-4de5-b113-4a6d0e8023c2"),
                             Color = "Green",
                             Name = "G7",
                             Type = "Number"
                         },
                         new
                         {
-                            Id = new Guid("3e8c013c-9884-4980-8bd3-b5396a2c6536"),
+                            Id = new Guid("cc5ab6ab-0e49-4b70-99dd-d02e62cbdda5"),
                             Color = "Green",
                             Name = "G8",
                             Type = "Number"
                         },
                         new
                         {
-                            Id = new Guid("df89b4c6-522a-4331-9e5d-eaeea3781242"),
+                            Id = new Guid("04f3efb5-1422-4bea-a194-98e7e26f2a1c"),
                             Color = "Green",
                             Name = "G9",
                             Type = "Number"
                         },
                         new
                         {
-                            Id = new Guid("2a648108-2f87-4ded-be9b-b09200c0bfb0"),
+                            Id = new Guid("f2049347-7298-4b18-8261-c4a4d577e16d"),
                             Color = "Red",
                             Name = "Skip",
                             Type = "Action"
                         },
                         new
                         {
-                            Id = new Guid("16e9d7ba-006b-4d8c-bfdc-cb0df6ae5d56"),
+                            Id = new Guid("d55388bf-76f6-4692-b60b-e3b78437fc2f"),
                             Color = "Red",
                             Name = "Reverse",
                             Type = "Action"
                         },
                         new
                         {
-                            Id = new Guid("16635160-17c7-433a-83e8-6668b34b5a31"),
+                            Id = new Guid("7aaa4331-d6ea-4fed-925f-50fd0412cb57"),
                             Color = "Red",
                             Name = "DrawTwo",
                             Type = "Action"
                         },
                         new
                         {
-                            Id = new Guid("e1871e2f-8ba9-44ea-8080-c073a0e71c3a"),
+                            Id = new Guid("8df37899-2edd-410e-9142-1dd3d6c17ee9"),
                             Color = "Blue",
                             Name = "Skip",
                             Type = "Action"
                         },
                         new
                         {
-                            Id = new Guid("62a49e36-ba37-4943-b1b8-ace3c5ae705d"),
+                            Id = new Guid("cf91378a-3eb4-4cb9-bcb4-c737c8b7b4f3"),
                             Color = "Blue",
                             Name = "Reverse",
                             Type = "Action"
                         },
                         new
                         {
-                            Id = new Guid("85bc4a5c-2f11-4efe-97f3-4302485db0c5"),
+                            Id = new Guid("82ce1671-2cd6-4cf5-b384-0da35838b918"),
                             Color = "Blue",
                             Name = "DrawTwo",
                             Type = "Action"
                         },
                         new
                         {
-                            Id = new Guid("86aa2f43-6e84-4ff9-b9c7-3735272449ae"),
+                            Id = new Guid("5c92449c-e480-42a3-b738-37747059672e"),
                             Color = "Yellow",
                             Name = "Skip",
                             Type = "Action"
                         },
                         new
                         {
-                            Id = new Guid("e0e4855f-f2e9-4d95-8bad-f3d6ee89254b"),
+                            Id = new Guid("25bdba97-856e-4b46-86d0-7c8412aea258"),
                             Color = "Yellow",
                             Name = "Reverse",
                             Type = "Action"
                         },
                         new
                         {
-                            Id = new Guid("f2a4801a-a5c9-40d0-bed1-1ee11e23cbe7"),
+                            Id = new Guid("a93860a1-385b-4f55-8c1f-476bd55706f4"),
                             Color = "Yellow",
                             Name = "DrawTwo",
                             Type = "Action"
                         },
                         new
                         {
-                            Id = new Guid("5e6c00e8-c4f1-48d2-8d29-5df2e52c84cc"),
+                            Id = new Guid("689e9a98-a4a7-49f5-919c-34aa92005817"),
                             Color = "Green",
                             Name = "Skip",
                             Type = "Action"
                         },
                         new
                         {
-                            Id = new Guid("14fede7b-0cad-4b17-95c0-b7ce150fa228"),
+                            Id = new Guid("7465734d-0b2d-4119-9225-6c371b4734e1"),
                             Color = "Green",
                             Name = "Reverse",
                             Type = "Action"
                         },
                         new
                         {
-                            Id = new Guid("db5fa18a-bbd0-4dd7-a566-3a465839eaee"),
+                            Id = new Guid("f1982bfb-f6fa-461b-ab43-b6b7ab778032"),
                             Color = "Green",
                             Name = "DrawTwo",
                             Type = "Action"
                         },
                         new
                         {
-                            Id = new Guid("48dbbce9-e630-40dc-b02c-8620cffebf54"),
+                            Id = new Guid("99926afe-18fd-4375-92ae-58724ddfaf03"),
                             Color = "Wild",
                             Name = "Wild",
                             Type = "Wild"
                         },
                         new
                         {
-                            Id = new Guid("1ad6bd64-0f28-4a8f-8490-28cf62f9e750"),
+                            Id = new Guid("97e423e0-2e51-4550-992c-e547d09fce20"),
                             Color = "Wild",
                             Name = "Wild Draw Four",
                             Type = "Wild"
@@ -436,10 +436,11 @@ namespace TEAM11.UNO.PL.Migrations
                     b.Property<Guid>("Id")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<Guid>("CurrentTurnUserId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<bool>("IsPaused")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValue(false);
+                        .HasColumnType("bit");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -447,37 +448,34 @@ namespace TEAM11.UNO.PL.Migrations
                         .IsUnicode(false)
                         .HasColumnType("varchar(50)");
 
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.HasKey("Id")
                         .HasName("PK_tblGame_Id");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("CurrentTurnUserId");
 
                     b.ToTable("tblGame", (string)null);
 
                     b.HasData(
                         new
                         {
-                            Id = new Guid("08ce4503-c094-4142-b810-eb63d3122f88"),
+                            Id = new Guid("6cf61197-9e20-473b-bdac-a519966269c2"),
+                            CurrentTurnUserId = new Guid("cbb644a5-cfc3-40c7-b040-53a4d18f449e"),
                             IsPaused = true,
-                            Name = "Game 1",
-                            UserId = new Guid("d7059aae-7259-41a6-8c93-cbb95beb0cbc")
+                            Name = "Game 1"
                         },
                         new
                         {
-                            Id = new Guid("a39d5161-0d17-499d-9cc3-3307ce1e26eb"),
+                            Id = new Guid("5b34913e-55f9-467b-9d4d-0fd001705f60"),
+                            CurrentTurnUserId = new Guid("76a6ab59-d7ed-441f-bd99-78c0c76fda74"),
                             IsPaused = true,
-                            Name = "Game 2",
-                            UserId = new Guid("6ccf0a27-06eb-4ba8-a9de-4d70b6793425")
+                            Name = "Game 2"
                         },
                         new
                         {
-                            Id = new Guid("425328a8-6237-46b2-b188-e737d5b99edb"),
+                            Id = new Guid("7ed005b7-bcde-43f1-966d-657eb89bc308"),
+                            CurrentTurnUserId = new Guid("cec2c1a1-1c72-4a9c-8724-76aa74a03396"),
                             IsPaused = true,
-                            Name = "Game 3",
-                            UserId = new Guid("99932bc6-9167-4b11-9b12-57e3493bf385")
+                            Name = "Game 3"
                         });
                 });
 
@@ -511,23 +509,23 @@ namespace TEAM11.UNO.PL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("019d2138-2146-41c6-a266-f0f14ee57f13"),
+                            Id = new Guid("a810c34a-7798-4a2a-a176-e390bd1352a3"),
                             Description = "Game 1 Log",
-                            GameId = new Guid("08ce4503-c094-4142-b810-eb63d3122f88"),
+                            GameId = new Guid("6cf61197-9e20-473b-bdac-a519966269c2"),
                             Timestamp = "12:00pm"
                         },
                         new
                         {
-                            Id = new Guid("d4be755d-7c6a-4d64-8fd8-b0cdf5af6442"),
+                            Id = new Guid("fa2b64ee-47e3-451a-8570-18cd65d5bfee"),
                             Description = "Game 2 Log",
-                            GameId = new Guid("a39d5161-0d17-499d-9cc3-3307ce1e26eb"),
+                            GameId = new Guid("5b34913e-55f9-467b-9d4d-0fd001705f60"),
                             Timestamp = "1:00pm"
                         },
                         new
                         {
-                            Id = new Guid("885b37b6-bae0-4ba3-8ae5-be0c64f0cb8f"),
+                            Id = new Guid("69770706-a303-4f31-94ce-ba82356510fc"),
                             Description = "Game 3 Log",
-                            GameId = new Guid("425328a8-6237-46b2-b188-e737d5b99edb"),
+                            GameId = new Guid("7ed005b7-bcde-43f1-966d-657eb89bc308"),
                             Timestamp = "2:00pm"
                         });
                 });
@@ -560,10 +558,24 @@ namespace TEAM11.UNO.PL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("05e3fee9-10b0-43b0-94f7-b565b1ae8e9d"),
-                            GameId = new Guid("08ce4503-c094-4142-b810-eb63d3122f88"),
+                            Id = new Guid("58413ad9-2faf-4f69-8aa2-8a830d50de14"),
+                            GameId = new Guid("6cf61197-9e20-473b-bdac-a519966269c2"),
                             IsComputerPlayer = false,
-                            UserId = new Guid("d7059aae-7259-41a6-8c93-cbb95beb0cbc")
+                            UserId = new Guid("d0d9b86c-d4c4-475d-abd9-5b67ce137eb7")
+                        },
+                        new
+                        {
+                            Id = new Guid("4dcabcc3-f34f-48c8-b037-021b2f4993cb"),
+                            GameId = new Guid("5b34913e-55f9-467b-9d4d-0fd001705f60"),
+                            IsComputerPlayer = false,
+                            UserId = new Guid("d0d9b86c-d4c4-475d-abd9-5b67ce137eb7")
+                        },
+                        new
+                        {
+                            Id = new Guid("87441425-7c40-433d-9561-c228e0e59d5a"),
+                            GameId = new Guid("7ed005b7-bcde-43f1-966d-657eb89bc308"),
+                            IsComputerPlayer = false,
+                            UserId = new Guid("d0d9b86c-d4c4-475d-abd9-5b67ce137eb7")
                         });
                 });
 
@@ -590,27 +602,27 @@ namespace TEAM11.UNO.PL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("c481c75c-8f24-4251-bbd5-aa423ef2e632"),
-                            CardId = new Guid("6ea7b011-475a-482b-8abd-7bd8633086e5"),
-                            PlayerId = new Guid("05e3fee9-10b0-43b0-94f7-b565b1ae8e9d")
+                            Id = new Guid("6532b3e9-a048-4483-b8e3-168e1a247d8b"),
+                            CardId = new Guid("8ed12283-e83a-47c4-b8eb-1065da1a9ecb"),
+                            PlayerId = new Guid("58413ad9-2faf-4f69-8aa2-8a830d50de14")
                         },
                         new
                         {
-                            Id = new Guid("175274cd-825a-4ace-a1db-72682cc83cb7"),
-                            CardId = new Guid("578e4f52-6ac3-464c-8b6a-a9e6030556fe"),
-                            PlayerId = new Guid("e699a7b1-51eb-4652-afa2-645cc1a22669")
+                            Id = new Guid("d586c189-6e5f-4f3b-9d63-bc677033bba9"),
+                            CardId = new Guid("7330b2c6-e199-4419-abf6-ea781a461eda"),
+                            PlayerId = new Guid("4dcabcc3-f34f-48c8-b037-021b2f4993cb")
                         },
                         new
                         {
-                            Id = new Guid("0af356be-7f26-41d2-b7d4-d2fb906bb49a"),
-                            CardId = new Guid("db2092cc-76c1-4361-94d3-3e6281b95009"),
-                            PlayerId = new Guid("4e7cca10-751e-4de4-a527-c115a5703ffa")
+                            Id = new Guid("42303d56-a373-48ad-9fcc-95593dbfa335"),
+                            CardId = new Guid("bf974281-f393-4075-b632-3c4279bbaa1d"),
+                            PlayerId = new Guid("87441425-7c40-433d-9561-c228e0e59d5a")
                         },
                         new
                         {
-                            Id = new Guid("276c76b2-85ef-44ac-b55f-f40810a31841"),
-                            CardId = new Guid("85d89e42-358a-4feb-ad11-10096ef3221f"),
-                            PlayerId = new Guid("2ff9f337-6070-4081-a71d-ccc8078398f0")
+                            Id = new Guid("05f7c37b-ee84-4c80-8ca4-8eadbb767667"),
+                            CardId = new Guid("ecf7735d-b887-45c6-8206-0feb3eb24bcd"),
+                            PlayerId = new Guid("7387595f-6e37-432a-be37-298449e8947b")
                         });
                 });
 
@@ -651,7 +663,7 @@ namespace TEAM11.UNO.PL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("71a95b24-b212-4f9b-8a18-e546f9cea4bc"),
+                            Id = new Guid("d0d9b86c-d4c4-475d-abd9-5b67ce137eb7"),
                             FirstName = "Austin",
                             LastName = "Steffes",
                             Password = "Wwbx8IUDtOY0aSZmfTGPD51+n9E=",
@@ -659,7 +671,7 @@ namespace TEAM11.UNO.PL.Migrations
                         },
                         new
                         {
-                            Id = new Guid("31bf8e51-855b-44e0-8038-728e080a5f56"),
+                            Id = new Guid("84826276-af90-4f04-a43c-33ccb0d4a668"),
                             FirstName = "Carlos",
                             LastName = "Guzman",
                             Password = "ZRhJY7TwwZ8UzKABa1uS7MYtnfQ=",
@@ -667,7 +679,7 @@ namespace TEAM11.UNO.PL.Migrations
                         },
                         new
                         {
-                            Id = new Guid("c08001ea-66a0-47dc-8d5a-8c84a8b0cc58"),
+                            Id = new Guid("9297a543-3d3d-4372-8ff0-3233d28571f3"),
                             FirstName = "Brian",
                             LastName = "Foote",
                             Password = "dcRQw/ljvvuRLuefC2PlY2UngPA=",
@@ -675,7 +687,7 @@ namespace TEAM11.UNO.PL.Migrations
                         },
                         new
                         {
-                            Id = new Guid("6ddda626-1da0-435d-88c4-b19b3b10d1ed"),
+                            Id = new Guid("434b40b7-aa4d-4aeb-b719-178706cb90cb"),
                             FirstName = "Bot",
                             LastName = "Bot",
                             Password = "OjGS4nkcV4YYDQImS16TRUBa+n0=",
@@ -685,14 +697,14 @@ namespace TEAM11.UNO.PL.Migrations
 
             modelBuilder.Entity("TEAM11.UNO.PL.Entities.tblGame", b =>
                 {
-                    b.HasOne("TEAM11.UNO.PL.Entities.tblUser", "CurrentTurnUserId")
+                    b.HasOne("TEAM11.UNO.PL.Entities.tblUser", "CurrentTurnUser")
                         .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .HasForeignKey("CurrentTurnUserId")
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired()
-                        .HasConstraintName("fk_tblGame_UserId");
+                        .HasConstraintName("fk_tblGame_CurrentTurnUserId");
 
-                    b.Navigation("CurrentTurnUserId");
+                    b.Navigation("CurrentTurnUser");
                 });
 
             modelBuilder.Entity("TEAM11.UNO.PL.Entities.tblGameLog", b =>
@@ -712,14 +724,14 @@ namespace TEAM11.UNO.PL.Migrations
                     b.HasOne("TEAM11.UNO.PL.Entities.tblGame", "Game")
                         .WithMany("Players")
                         .HasForeignKey("GameId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired()
                         .HasConstraintName("fk_tblPlayer_GameId");
 
                     b.HasOne("TEAM11.UNO.PL.Entities.tblUser", "User")
                         .WithMany("Players")
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired()
                         .HasConstraintName("fk_tblPlayer_UserId");
 
