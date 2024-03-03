@@ -12,8 +12,10 @@ namespace TEAM11.UNO.PL.Entities
 
         // Connection among tables
         public Guid CardId { get; set; }
-        public Guid PlayerId { get; set; }
         public virtual tblCard Card {  get; set; }
+        
+        public Guid PlayerId { get; set; }
         public virtual tblPlayer Player { get; set; }
+
     }
 }
