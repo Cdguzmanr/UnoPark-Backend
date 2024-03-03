@@ -16,6 +16,5 @@ namespace TEAM11.UNO.PL.Entities
         // Connection among tables
         public virtual ICollection<tblPlayerCard> Playercards { get; set; }
 
-
     }
 }

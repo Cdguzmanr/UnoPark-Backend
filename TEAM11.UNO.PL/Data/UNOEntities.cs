@@ -43,16 +43,13 @@ namespace TEAM11.UNO.PL.Data
         {
 
             base.OnModelCreating(modelBuilder);
-            CreateUsers(modelBuilder);
-  
-            CreateGames(modelBuilder);
-            
 
+            CreateUsers(modelBuilder);
+            CreateGames(modelBuilder);
+            CreateGameLogs(modelBuilder);
             CreatePlayers(modelBuilder);
             CreateCards(modelBuilder);
             CreatePlayerCards(modelBuilder);
-
-            CreateGameLogs(modelBuilder);
 
         }
 
@@ -176,25 +173,17 @@ namespace TEAM11.UNO.PL.Data
 
                 entity.Property(e => e.IsPaused)
                     .IsRequired();
-                    
 
-                // Double checking here, CurrentTurnUserId is a foreign key to Id in the User table?
-                // Right since we need to get the "current" player.
-
-                // Ensure that the relationship is correctly defined
-
-                entity.HasOne(d => d.CurrentTurnUser)
-                    .WithMany()
-                    .HasForeignKey(d => d.CurrentTurnUserId)
-                    .HasConstraintName("fk_tblGame_CurrentTurnUserId")
-                    .OnDelete(DeleteBehavior.Restrict);
+                entity.HasOne(d => d.User)
+                .WithMany(p => p.Games)
+                .HasForeignKey(d => d.UserId)
+                .HasConstraintName("fk_tblGame_UserId")
+                .OnDelete(DeleteBehavior.Restrict);
 
 
                 List<tblGame> games = new List<tblGame>
                 {
-                    new tblGame { Id = gameId[0], Name = "Game 1", IsPaused = true, CurrentTurnUserId = playerId[0] },
-                    new tblGame { Id = gameId[1], Name = "Game 2", IsPaused = true, CurrentTurnUserId = playerId[1] },
-                    new tblGame { Id = gameId[2], Name = "Game 3", IsPaused = true, CurrentTurnUserId = playerId[2] },
+                    new tblGame { Id = gameId[0], Name = "TestGame", UserId = userId[0], IsPaused = false },
                 };
 
 
@@ -226,15 +215,13 @@ namespace TEAM11.UNO.PL.Data
                     .IsUnicode(false);
 
                 entity.HasOne(d => d.Game)
-                  .WithMany(p => p.Gamelogs)
-                  .HasForeignKey(d => d.GameId)
-                  .HasConstraintName("fk_tblGameLog_GameId");
+                .WithMany(p => p.Gamelogs)
+                .HasForeignKey(d => d.GameId)
+                .HasConstraintName("fk_tblGameLog_GameId");
 
                 List<tblGameLog> gamelogs = new List<tblGameLog>
                 {
-                    new tblGameLog { Id = gamelogId[0], Description = "Game 1 Log", Timestamp = "12:00pm", GameId = gameId[0] },
-                    new tblGameLog { Id = gamelogId[1], Description = "Game 2 Log", Timestamp = "1:00pm", GameId = gameId[1] },
-                    new tblGameLog { Id = gamelogId[2], Description = "Game 3 Log", Timestamp = "2:00pm", GameId = gameId[2] }
+                    new tblGameLog { Id = gamelogId[0], Description = "TestGameLog", Timestamp = "TestStamp", GameId = gameId[0] },
                 };
 
                 modelBuilder.Entity<tblGameLog>().HasData(gamelogs);
@@ -259,24 +246,26 @@ namespace TEAM11.UNO.PL.Data
                     .IsRequired()
                     .HasDefaultValue(false);
 
+                // User
+
                 entity.HasOne(d => d.User)
-                    .WithMany(p => p.Players)
-                    .HasForeignKey(d => d.UserId)
-                    .HasConstraintName("fk_tblPlayer_UserId")
-                    .OnDelete(DeleteBehavior.Restrict);
+                .WithMany(p => p.Players)
+                .HasForeignKey(d => d.UserId)
+                .HasConstraintName("fk_tblPlayer_UserId")
+                .OnDelete(DeleteBehavior.Restrict);
+
+                // Game
 
                 entity.HasOne(d => d.Game)
-                    .WithMany(p => p.Players)
-                    .HasForeignKey(d => d.GameId)
-                    .HasConstraintName("fk_tblPlayer_GameId")
-                    .OnDelete(DeleteBehavior.Restrict);
+                .WithMany(p => p.Players)
+                .HasForeignKey(d => d.GameId)
+                .HasConstraintName("fk_tblPlayer_GameId");
+
+
 
                 List<tblPlayer> players = new List<tblPlayer>
                 {
-                    new tblPlayer { Id = playerId[0], IsComputerPlayer = false, UserId = userId[0], GameId = gameId[0] },
-                    new tblPlayer { Id = playerId[1], IsComputerPlayer = false, UserId = userId[0], GameId = gameId[1] },
-                    new tblPlayer { Id = playerId[2], IsComputerPlayer = false, UserId = userId[0], GameId = gameId[2] },
-
+                    new tblPlayer { Id = playerId[0], IsComputerPlayer = false, UserId = userId[0], GameId = gameId[0]  },
                 };
 
                 modelBuilder.Entity<tblPlayer>().HasData(players);
@@ -296,22 +285,24 @@ namespace TEAM11.UNO.PL.Data
 
                 entity.Property(e => e.Id).ValueGeneratedNever();
 
-                entity.HasOne(d => d.Player)
-                  .WithMany(p => p.Playercards)
-                  .HasForeignKey(d => d.PlayerId)
-                  .HasConstraintName("fk_tblPlayerCard_PlayerId");
+                // Card 
 
                 entity.HasOne(d => d.Card)
-                  .WithMany(p => p.Playercards)
-                  .HasForeignKey(d => d.CardId)
-                  .HasConstraintName("fk_tblPlayerCard_CardId");
+                .WithMany(p => p.Playercards)
+                .HasForeignKey(d => d.CardId)
+                .HasConstraintName("fk_tblPlayerCard_CardId");
+
+                // Player
+
+                entity.HasOne(d => d.Player)
+                .WithMany(p => p.Playercards)
+                .HasForeignKey(d => d.PlayerId)
+                .HasConstraintName("fk_tblPlayerCard_PlayerId");
+
 
                 List<tblPlayerCard> playerCards = new List<tblPlayerCard>
                 {
-                    new tblPlayerCard { Id = Guid.NewGuid(), CardId = cardId[0], PlayerId = playerId[0] },
-                    new tblPlayerCard { Id = Guid.NewGuid(), CardId = cardId[1], PlayerId = playerId[1] },
-                    new tblPlayerCard { Id = Guid.NewGuid(), CardId = cardId[2], PlayerId = playerId[2] },
-                    new tblPlayerCard { Id = Guid.NewGuid(), CardId = cardId[3], PlayerId = playerId[3] },
+                    new tblPlayerCard { Id = playercardId[0], CardId = cardId[0], PlayerId = playerId[0], }
                 };
 
                 modelBuilder.Entity<tblPlayerCard>().HasData(playerCards);
@@ -355,8 +346,7 @@ namespace TEAM11.UNO.PL.Data
                 {
                     new tblUser { Id = userId[0], Username = "Austin", Password = GetHash("Austin"), FirstName = "Austin", LastName = "Steffes"},
                     new tblUser { Id = userId[1], Username = "Carlos", Password = GetHash("Carlos"), FirstName = "Carlos", LastName = "Guzman"},
-                    new tblUser { Id = userId[2], Username = "Brian", Password = GetHash("Brian"), FirstName = "Brian", LastName = "Foote"},
-                    new tblUser { Id = userId[3], Username = "Bot", Password = GetHash("Bot"), FirstName = "Bot", LastName = "Bot"}
+                    new tblUser { Id = userId[2], Username = "Brian", Password = GetHash("Brian"), FirstName = "Brian", LastName = "Foote"}
                 };
 
                 modelBuilder.Entity<tblUser>().HasData(users);
