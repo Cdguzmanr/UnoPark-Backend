@@ -138,60 +138,60 @@ namespace TEAM11.UNO.PL.Migrations
                 columns: new[] { "Id", "Color", "Name", "Type" },
                 values: new object[,]
                 {
-                    { new Guid("077cfaf2-f9bd-4486-9365-7d748d0d9141"), "Green", "G4", "Number" },
-                    { new Guid("09fa981c-8937-4ce1-aa8f-28cd5df9d677"), "Blue", "B2", "Number" },
-                    { new Guid("0c3c11e1-71b4-48d7-8922-d28899f06812"), "Blue", "B8", "Number" },
-                    { new Guid("0f63993b-fa5c-4ae0-83c9-df7dc777e5e2"), "Red", "R5", "Number" },
-                    { new Guid("17396ef8-5a15-4e58-9b41-ff9acebd4105"), "Green", "G3", "Number" },
-                    { new Guid("1da8d0a2-ba51-4fb6-abdc-a2deb82bda80"), "Blue", "DrawTwo", "Action" },
-                    { new Guid("231a7fdd-738b-4d12-99ad-40548338646d"), "Blue", "B4", "Number" },
-                    { new Guid("28a5f492-71d3-4a81-9dbe-cd6537adc7bd"), "Wild", "Wild Draw Four", "Wild" },
-                    { new Guid("295e2a45-15b1-452c-8696-f1620d585377"), "Blue", "B1", "Number" },
-                    { new Guid("2e7bdcfe-2e5d-40c0-8558-92f65e65cf95"), "Yellow", "Y7", "Number" },
-                    { new Guid("2f3ee085-f6fc-4583-b9f8-1d2fb91bbe54"), "Yellow", "Y5", "Number" },
-                    { new Guid("305f3547-07ac-4f2b-a26b-eeb6d936c0b1"), "Blue", "B0", "Number" },
-                    { new Guid("30a69896-a5c3-47ed-9196-44511dfd8047"), "Yellow", "Skip", "Action" },
-                    { new Guid("425d646a-11c7-4ff0-be88-6f8ad3365c0a"), "Red", "Reverse", "Action" },
-                    { new Guid("44d84bae-bb8f-4e89-bf7d-1aa5e3c3181b"), "Green", "G7", "Number" },
-                    { new Guid("464d9aae-9840-4ea9-bb0b-bdfbeaf11397"), "Blue", "Reverse", "Action" },
-                    { new Guid("4b64d36f-48c8-4265-931e-323b697945fd"), "Blue", "B3", "Number" },
-                    { new Guid("4d72b1bd-f8b2-407a-8090-76526a035bd6"), "Blue", "B5", "Number" },
-                    { new Guid("4d9cee6e-7e27-418f-b234-9dd583b73a58"), "Yellow", "Y1", "Number" },
-                    { new Guid("4e968d6a-594b-471c-a24a-e4aba20ee5a9"), "Green", "G5", "Number" },
-                    { new Guid("4eeafc68-0e4e-4718-953f-827948e2399a"), "Blue", "B7", "Number" },
-                    { new Guid("4f8a4f5b-c847-4ad6-80a4-4d5abb5c8434"), "Yellow", "Y2", "Number" },
-                    { new Guid("58b89255-7a1e-4a1f-9590-47317bccc717"), "Yellow", "Reverse", "Action" },
-                    { new Guid("5a60d8fc-a7e7-4be3-b2d1-77a9917135f2"), "Green", "Skip", "Action" },
-                    { new Guid("5dd0b093-1dec-48bf-add3-b3226710453f"), "Green", "G6", "Number" },
-                    { new Guid("697e2ed2-fdf1-4019-b583-eb28ba6bd66f"), "Yellow", "Y9", "Number" },
-                    { new Guid("6ba6b6be-e52f-472f-8baa-991a4a75b477"), "Yellow", "Y4", "Number" },
-                    { new Guid("762288c0-8d0b-4add-b840-98dfb3180137"), "Red", "R8", "Number" },
-                    { new Guid("86132ca1-55d4-45f6-94c8-9900e41760ac"), "Green", "G2", "Number" },
-                    { new Guid("8e9da32a-641d-4b31-8a21-2f33f250a28c"), "Green", "G8", "Number" },
-                    { new Guid("9301525a-e5d5-4e00-a6e7-cedef990865a"), "Red", "R6", "Number" },
-                    { new Guid("97d8fc9e-2501-4df5-913f-338ec6096bf1"), "Yellow", "Y0", "Number" },
-                    { new Guid("a092e10b-77f3-47d7-8dd8-50ffec147997"), "Blue", "B6", "Number" },
-                    { new Guid("a458f5bf-ee2e-4fb4-a10e-613a3ad67ac3"), "Red", "DrawTwo", "Action" },
-                    { new Guid("a46626b0-9bfd-4e2b-afc5-4ca3c6182f14"), "Yellow", "Y3", "Number" },
-                    { new Guid("a513a1f4-0667-4d0c-9b0f-3f89f8bfa9f7"), "Red", "R1", "Number" },
-                    { new Guid("a72592f9-a2e4-41b8-90fe-f1e3ba262432"), "Blue", "Skip", "Action" },
-                    { new Guid("a76e0a9c-5b45-4710-8471-0f68f110e32c"), "Green", "DrawTwo", "Action" },
-                    { new Guid("a7f66ffe-cc69-4bc9-a5d5-479adced6b3b"), "Red", "Skip", "Action" },
-                    { new Guid("ab6cfadb-5f0a-4553-9356-7a30fb8af703"), "Red", "R7", "Number" },
-                    { new Guid("abbd4482-b574-4ae6-be3a-9f7ecd96907e"), "Green", "G9", "Number" },
-                    { new Guid("adf5f708-ad29-4ba2-a048-c4e3aa782bea"), "Green", "G1", "Number" },
-                    { new Guid("c4662da9-65e7-4ee4-bf2e-fcff24399506"), "Red", "R0", "Number" },
-                    { new Guid("c6339a6f-6d05-4934-97eb-22bec6db16bd"), "Yellow", "Y6", "Number" },
-                    { new Guid("cb047450-9c52-4a9b-ad0a-88acc3bba478"), "Wild", "Wild", "Wild" },
-                    { new Guid("d4117139-7111-47af-a897-e61e7d08e6cb"), "Blue", "B9", "Number" },
-                    { new Guid("d5f21607-5c76-412c-bda9-84692581f1e9"), "Red", "R9", "Number" },
-                    { new Guid("d700333b-3155-48ab-b0a5-06b76a598485"), "Green", "G0", "Number" },
-                    { new Guid("e34054e7-0f71-4572-8853-9e23e07651b7"), "Green", "Reverse", "Action" },
-                    { new Guid("e3cadff8-4e18-4d0d-b037-96491009652d"), "Red", "R4", "Number" },
-                    { new Guid("f03e44ea-2d75-4612-adaa-e9441e41f2cd"), "Yellow", "Y8", "Number" },
-                    { new Guid("f088b868-c878-4283-8213-5478ce322fb6"), "Red", "R2", "Number" },
-                    { new Guid("f4f0dabe-8448-461b-befa-3b1e47ee672c"), "Red", "R3", "Number" },
-                    { new Guid("f665cec4-d8b2-4269-b218-0327acfb3d3f"), "Yellow", "DrawTwo", "Action" }
+                    { new Guid("01f6835a-afc2-4ef3-8408-e33de52ab062"), "Green", "G3", "Number" },
+                    { new Guid("0373a0fe-4d19-4df3-908c-0d184f9d648f"), "Blue", "Skip", "Action" },
+                    { new Guid("0520492e-fe1b-4062-bdd8-2b16f60c773e"), "Yellow", "Y4", "Number" },
+                    { new Guid("08471f17-187a-4c13-b88f-393ed362247c"), "Red", "Reverse", "Action" },
+                    { new Guid("08faec62-e3c3-41af-b5c3-3fd7ea5aee0f"), "Yellow", "Y7", "Number" },
+                    { new Guid("09c6e400-1a82-42da-bb43-cd0e02532432"), "Wild", "Wild Draw Four", "Wild" },
+                    { new Guid("0c43456a-e4ab-4538-a480-80fcfb9d49c1"), "Red", "R0", "Number" },
+                    { new Guid("13b2d04d-0cb1-4249-aeb6-d40e73114f83"), "Yellow", "Y9", "Number" },
+                    { new Guid("14690546-146d-447d-889b-657b21093386"), "Blue", "B8", "Number" },
+                    { new Guid("1c1ff67d-5e0b-4737-8e8b-94b27dc21efe"), "Red", "R1", "Number" },
+                    { new Guid("1dff2ee0-2fb0-45f8-9fef-8720bfa04099"), "Red", "R3", "Number" },
+                    { new Guid("21af14fc-86e2-42bf-8067-aa513eb08485"), "Red", "Skip", "Action" },
+                    { new Guid("2714577a-8c68-4816-9859-096aa956ee87"), "Blue", "B4", "Number" },
+                    { new Guid("3111ff79-5d54-459b-8f81-315e5188d602"), "Green", "G2", "Number" },
+                    { new Guid("3bb40db4-f105-46b6-acd2-f5a6898d3e81"), "Yellow", "Y3", "Number" },
+                    { new Guid("3bd5304f-5776-4c2f-9e5e-b5df8e95300b"), "Red", "R9", "Number" },
+                    { new Guid("4bb60c55-7541-4f1b-91ef-2c280a181f53"), "Yellow", "Skip", "Action" },
+                    { new Guid("5185c055-14b4-4c68-b9fe-596c4ed6d6c0"), "Red", "R6", "Number" },
+                    { new Guid("52636386-9de1-4f89-9777-2841b38698b4"), "Blue", "B9", "Number" },
+                    { new Guid("53977ba0-1a3f-41d7-9555-96280d913978"), "Blue", "B1", "Number" },
+                    { new Guid("55fa18ae-705b-4a27-8bb0-d2a322db5cb3"), "Green", "G4", "Number" },
+                    { new Guid("56511d9a-ae65-4052-b169-dbe4e24f9eca"), "Green", "G9", "Number" },
+                    { new Guid("57f0a3b0-cc3e-4f62-80bc-3a89592d4548"), "Yellow", "DrawTwo", "Action" },
+                    { new Guid("5d248dd8-e022-434d-be46-071d434ebff4"), "Yellow", "Y1", "Number" },
+                    { new Guid("60548d3f-cfcb-477e-9ba4-eca96729c2ff"), "Yellow", "Y5", "Number" },
+                    { new Guid("61e666c3-0e83-4a3a-a2df-4e949d898e6c"), "Green", "Skip", "Action" },
+                    { new Guid("6242acbc-1a95-4a76-b2e4-3043a023fa8d"), "Green", "Reverse", "Action" },
+                    { new Guid("630d6dec-75dd-43f2-be64-2b277cf78e07"), "Blue", "B0", "Number" },
+                    { new Guid("63238e89-536d-41ef-be0d-200aec0119a0"), "Red", "R4", "Number" },
+                    { new Guid("741730ab-b01e-4678-8989-272177fed461"), "Yellow", "Y2", "Number" },
+                    { new Guid("88200667-f2e4-4280-9207-bc79847d72dc"), "Red", "R2", "Number" },
+                    { new Guid("8c0011ae-2cfc-4bec-8238-278efe902983"), "Yellow", "Y0", "Number" },
+                    { new Guid("8e0d6a27-6c1c-48cf-8072-e00bf3d93502"), "Yellow", "Reverse", "Action" },
+                    { new Guid("9af7732a-5aba-4d1d-b34f-68338b5e2033"), "Red", "DrawTwo", "Action" },
+                    { new Guid("a060585b-2692-4641-b143-6d9aa5ad2b7e"), "Green", "DrawTwo", "Action" },
+                    { new Guid("a53df231-ae5e-4ec6-b872-edea8e6dcee7"), "Red", "R8", "Number" },
+                    { new Guid("a5dfbbaa-ca13-4817-953b-280929facfcc"), "Green", "G1", "Number" },
+                    { new Guid("b854f9b5-8d9b-477b-a1eb-6e2cfd76c431"), "Yellow", "Y6", "Number" },
+                    { new Guid("c1b73c02-06e5-4e22-89c5-024cccd2ca9d"), "Blue", "B6", "Number" },
+                    { new Guid("c6a62878-549b-4a81-a61c-3ce8fbd5dbf7"), "Blue", "B2", "Number" },
+                    { new Guid("c77327a0-c3ef-4450-ab1a-a6ba5fa61ca8"), "Blue", "Reverse", "Action" },
+                    { new Guid("c81bcf76-44e1-4f85-ae3e-c5277aa7d5ab"), "Red", "R7", "Number" },
+                    { new Guid("d103ce73-efc2-4e6a-a2d0-e7b7284f852a"), "Green", "G0", "Number" },
+                    { new Guid("d744c63c-f3b1-430d-8a12-851b6b49366a"), "Red", "R5", "Number" },
+                    { new Guid("dfd3063e-d262-4db7-838f-81f89bbb1af6"), "Green", "G7", "Number" },
+                    { new Guid("e09af017-2b55-4976-8993-8ae0a4a359c9"), "Blue", "B5", "Number" },
+                    { new Guid("e72e3089-d6a9-47b6-86d0-476f9b05dde9"), "Wild", "Wild", "Wild" },
+                    { new Guid("e838bd4d-7830-4d86-84ac-84a0e15370b3"), "Green", "G8", "Number" },
+                    { new Guid("e9f7354e-af78-4a8d-8883-a9837dd35606"), "Yellow", "Y8", "Number" },
+                    { new Guid("f1f1f9e3-326d-47b8-98ba-2f51a7490673"), "Blue", "B3", "Number" },
+                    { new Guid("f420cf3a-d074-4155-b9f8-a30d3e2cf964"), "Green", "G6", "Number" },
+                    { new Guid("f82c2fde-df82-4c61-8cbc-aee93cbf71bc"), "Blue", "B7", "Number" },
+                    { new Guid("fa410ee7-5427-41e7-996e-0569fbbbb09f"), "Blue", "DrawTwo", "Action" },
+                    { new Guid("ffcb27b9-165d-445f-a12e-b85348a5e33e"), "Green", "G5", "Number" }
                 });
 
             migrationBuilder.InsertData(
@@ -199,30 +199,30 @@ namespace TEAM11.UNO.PL.Migrations
                 columns: new[] { "Id", "FirstName", "LastName", "Password", "Username" },
                 values: new object[,]
                 {
-                    { new Guid("0099bf3f-6997-42b4-b5a0-5ff1d1890c71"), "Austin", "Steffes", "Wwbx8IUDtOY0aSZmfTGPD51+n9E=", "Austin" },
-                    { new Guid("27ecdd25-8acf-43c2-a271-206b39ed2f03"), "Brian", "Foote", "dcRQw/ljvvuRLuefC2PlY2UngPA=", "Brian" },
-                    { new Guid("e73e7c0f-3feb-40bf-b1e1-2297381671d8"), "Carlos", "Guzman", "ZRhJY7TwwZ8UzKABa1uS7MYtnfQ=", "Carlos" }
+                    { new Guid("3c2bb05f-3775-4b1f-9732-d44c6664bb5a"), "Brian", "Foote", "dcRQw/ljvvuRLuefC2PlY2UngPA=", "Brian" },
+                    { new Guid("9138db9e-9a5c-4615-9646-4921a1d129d4"), "Austin", "Steffes", "Wwbx8IUDtOY0aSZmfTGPD51+n9E=", "Austin" },
+                    { new Guid("bf1ca6cc-6aaa-40c9-9ff4-bb92dab8eede"), "Carlos", "Guzman", "ZRhJY7TwwZ8UzKABa1uS7MYtnfQ=", "Carlos" }
                 });
 
             migrationBuilder.InsertData(
                 table: "tblGame",
                 columns: new[] { "Id", "IsPaused", "Name", "UserId" },
-                values: new object[] { new Guid("c1c2ee94-2520-4df0-b57f-83cbcbb2d952"), false, "TestGame", new Guid("0099bf3f-6997-42b4-b5a0-5ff1d1890c71") });
+                values: new object[] { new Guid("a8f6c609-0115-42b9-a063-363f617e5264"), false, "TestGame", new Guid("9138db9e-9a5c-4615-9646-4921a1d129d4") });
 
             migrationBuilder.InsertData(
                 table: "tblGameLog",
                 columns: new[] { "Id", "Description", "GameId", "Timestamp" },
-                values: new object[] { new Guid("7d33dc9c-bd84-4820-a725-6758f353283a"), "TestGameLog", new Guid("c1c2ee94-2520-4df0-b57f-83cbcbb2d952"), "TestStamp" });
+                values: new object[] { new Guid("9cf67242-e6a9-47fd-9a0d-02f448a74ef7"), "TestGameLog", new Guid("a8f6c609-0115-42b9-a063-363f617e5264"), "TestStamp" });
 
             migrationBuilder.InsertData(
                 table: "tblPlayer",
                 columns: new[] { "Id", "GameId", "UserId" },
-                values: new object[] { new Guid("372ea42d-0a66-439e-a473-029708bba214"), new Guid("c1c2ee94-2520-4df0-b57f-83cbcbb2d952"), new Guid("0099bf3f-6997-42b4-b5a0-5ff1d1890c71") });
+                values: new object[] { new Guid("efaaa344-8886-409a-aff6-13ec37cca380"), new Guid("a8f6c609-0115-42b9-a063-363f617e5264"), new Guid("9138db9e-9a5c-4615-9646-4921a1d129d4") });
 
             migrationBuilder.InsertData(
                 table: "tblPlayerCard",
                 columns: new[] { "Id", "CardId", "PlayerId" },
-                values: new object[] { new Guid("50fdd604-99f2-4926-a2a7-ad6a112a49d7"), new Guid("c4662da9-65e7-4ee4-bf2e-fcff24399506"), new Guid("372ea42d-0a66-439e-a473-029708bba214") });
+                values: new object[] { new Guid("a2609044-5448-4495-a87f-a99b859e4ece"), new Guid("0c43456a-e4ab-4538-a480-80fcfb9d49c1"), new Guid("efaaa344-8886-409a-aff6-13ec37cca380") });
 
             migrationBuilder.CreateIndex(
                 name: "IX_tblGame_UserId",
