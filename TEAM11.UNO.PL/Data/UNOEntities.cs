@@ -184,6 +184,8 @@ namespace TEAM11.UNO.PL.Data
                 List<tblGame> games = new List<tblGame>
                 {
                     new tblGame { Id = gameId[0], Name = "TestGame", UserId = userId[0], IsPaused = false },
+                    new tblGame { Id = gameId[1], Name = "TestGame2", UserId = userId[1], IsPaused = false },
+                    new tblGame { Id = gameId[2], Name = "TestGame3", UserId = userId[2], IsPaused = false },
                 };
 
 
@@ -222,6 +224,8 @@ namespace TEAM11.UNO.PL.Data
                 List<tblGameLog> gamelogs = new List<tblGameLog>
                 {
                     new tblGameLog { Id = gamelogId[0], Description = "TestGameLog", Timestamp = "TestStamp", GameId = gameId[0] },
+                    new tblGameLog { Id = gamelogId[1], Description = "TestGameLog2", Timestamp = "TestStamp2", GameId = gameId[1] },
+                    new tblGameLog { Id = gamelogId[2], Description = "TestGameLog3", Timestamp = "TestStamp3", GameId = gameId[2] },
                 };
 
                 modelBuilder.Entity<tblGameLog>().HasData(gamelogs);
@@ -266,6 +270,8 @@ namespace TEAM11.UNO.PL.Data
                 List<tblPlayer> players = new List<tblPlayer>
                 {
                     new tblPlayer { Id = playerId[0], IsComputerPlayer = false, UserId = userId[0], GameId = gameId[0]  },
+                    new tblPlayer { Id = playerId[1], IsComputerPlayer = false, UserId = userId[1], GameId = gameId[1]  },
+                    new tblPlayer { Id = playerId[2], IsComputerPlayer = false, UserId = userId[2], GameId = gameId[2]  },
                 };
 
                 modelBuilder.Entity<tblPlayer>().HasData(players);
@@ -302,7 +308,9 @@ namespace TEAM11.UNO.PL.Data
 
                 List<tblPlayerCard> playerCards = new List<tblPlayerCard>
                 {
-                    new tblPlayerCard { Id = playercardId[0], CardId = cardId[0], PlayerId = playerId[0], }
+                    new tblPlayerCard { Id = playercardId[0], CardId = cardId[0], PlayerId = playerId[0], },
+                    new tblPlayerCard { Id = playercardId[1], CardId = cardId[1], PlayerId = playerId[1], },
+                    new tblPlayerCard { Id = playercardId[2], CardId = cardId[2], PlayerId = playerId[2], }
                 };
 
                 modelBuilder.Entity<tblPlayerCard>().HasData(playerCards);

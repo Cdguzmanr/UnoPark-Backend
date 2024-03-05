@@ -12,7 +12,7 @@ namespace TEAM11.UNO.PL.Test
         [TestMethod]
         public void LoadTest()
         {
-            int expected = 52;
+            int expected = 54;
             var cards = base.LoadTest();
             Assert.AreEqual(expected, cards.Count());
         }
