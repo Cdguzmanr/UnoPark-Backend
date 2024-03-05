@@ -22,7 +22,7 @@ namespace TEAM11.UNO.PL.Test
 
             _configuration = builder.Build();
             options = new DbContextOptionsBuilder<UNOEntities>()
-                .UseSqlServer(_configuration.GetConnectionString("DatabaseConnection"))
+                .UseSqlServer(_configuration.GetConnectionString("UNOConnection"))
                 //.UseLazyLoadingProxies()
                 .Options;
 
