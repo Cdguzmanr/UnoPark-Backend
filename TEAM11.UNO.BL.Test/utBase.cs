@@ -4,10 +4,10 @@ using Microsoft.Extensions.Options;
 using System.Collections.Generic;
 using System.IO;
 
-namespace TEAM11.UNO.PL.Test
+namespace TEAM11.UNO.BL.Test
 {
     [TestClass]
-    public class utBase<T> where T : class
+    public abstract class utBase
     {
         protected UNOEntities dc;  // declare the DataContext
         protected IDbContextTransaction transaction;
@@ -43,31 +43,6 @@ namespace TEAM11.UNO.PL.Test
             transaction.Rollback();
             transaction.Dispose();
             dc = null;
-        }
-
-
-        public List<T> LoadTest()
-        {
-            return dc.Set<T>().ToList();
-        }
-
-        public int InsertTest(T row)
-        {
-            dc.Set<T>().Add(row);
-            return dc.SaveChanges();
-        }
-
-        public int UpdateTest(T row)
-        {
-
-            dc.Entry(row).State = EntityState.Modified;
-            return dc.SaveChanges();
-        }
-
-        public int DeleteTest(T row)
-        {
-            dc.Set<T>().Remove(row);
-            return dc.SaveChanges();
         }
     }
 }
