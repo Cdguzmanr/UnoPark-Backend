@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Extensions.Options;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,30 +9,49 @@ namespace TEAM11.UNO.BL.Test
 {
     public class utUser : utBase
     {
-        [TestMethod]
-        public void LoadTest()
-        {
+        //[TestMethod]
+        //public void LoadTest()
+        //{
+        //    List<User> users = new UserManager(options).Load();
 
-        }
-        [TestMethod]
-        public void LoadByIdTest()
-        {
+        //    int expected = 1;
 
-        }
-        [TestMethod]
-        public void InsertTest()
-        {
+        //    Assert.AreEqual(expected, users.Count);
+        //}
+        //[TestMethod]
+        //public void LoadByIdTest()
+        //{
+        //    User user = new UserManager(options).Load().FirstOrDefault();
+        //    Assert.AreEqual(new UserManager(options).LoadById(user.Id).Id, user.Id);
+        //}
+        //[TestMethod]
+        //public void InsertTest()
+        //{
+        //    User user = new User
+        //    {
+        //        user.Username = "Test",
+        //        user.Password = "Test",
+        //        user.FirstName = "Test",
+        //        user.LastName = "Test",
+        //    }
 
-        }
-        [TestMethod]
-        public void UpdateTest()
-        {
+        //    int result = new UserManager(options).Insert(user, true);
+        //    Assert.IsTrue(result > 0);
+        //}
+        //[TestMethod]
+        //public void UpdateTest()
+        //{
+        //    User user = new UserManager(options).Load().FirstOrDefault();
+        //    user.FirstName = "Nemo";
 
-        }
-        [TestMethod]
-        public void DeleteTest()
-        {
+        //    Assert.IsTrue(new UserManager(options).Update(user, true) > 0);
+        //}
+        //[TestMethod]
+        //public void DeleteTest()
+        //{
+        //    User user = new UserManager(options).Load().LastOrDefault();
 
-        }
+        //    Assert.IsTrue(new UserManager(options).Delete(user.Id, true) > 0);
+        //}
     }
 }

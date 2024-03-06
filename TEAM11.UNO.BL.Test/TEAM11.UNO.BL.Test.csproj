@@ -38,6 +38,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\TEAM11.UNO.BL.Models\TEAM11.UNO.BL.Models.csproj" />
     <ProjectReference Include="..\TEAM11.UNO.PL\TEAM11.UNO.PL.csproj" />
   </ItemGroup>
 

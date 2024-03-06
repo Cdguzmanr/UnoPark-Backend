@@ -14,3 +14,4 @@ global using Microsoft.Extensions.Configuration;
 global using TEAM11.UNO.PL.Data;
 global using TEAM11.UNO.PL.Entities;
 global using TEAM11.UNO.PL;
+global using TEAM11.UNO.BL.Models;
