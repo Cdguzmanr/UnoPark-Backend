@@ -7,6 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="8.0.2" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\TEAM11.UNO.BL.Models\TEAM11.UNO.BL.Models.csproj" />
     <ProjectReference Include="..\TEAM11.UNO.PL\TEAM11.UNO.PL.csproj" />
   </ItemGroup>
