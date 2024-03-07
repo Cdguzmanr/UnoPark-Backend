@@ -42,17 +42,19 @@
         }
 
 
+        // Todo: Add foreach loop to delete all the players related to the user before delete the user
         [TestMethod]
         public void DeleteTest()
         {
-            tblUser row = base.LoadTest().FirstOrDefault();
+            tblUser userRow = base.LoadTest().FirstOrDefault();
+            tblPlayer playerRow = dc.tblPlayers.FirstOrDefault(p => p.UserId == userRow.Id);
 
-            if (row != null)
+            if (userRow != null && playerRow != null)
             {
-                dc.tblUsers.Remove(row);
-                int rowsAffected = DeleteTest(row);
-
-                Assert.IsTrue(rowsAffected == 1);
+                dc.tblPlayers.Remove(playerRow); // Need to remove the Players related to the user before delete user
+                
+                int userRowsAffected = DeleteTest(userRow);
+                Assert.IsTrue(userRowsAffected > 0);
             }
 
         }

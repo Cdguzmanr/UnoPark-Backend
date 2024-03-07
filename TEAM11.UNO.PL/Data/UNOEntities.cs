@@ -42,14 +42,22 @@ namespace TEAM11.UNO.PL.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
+
+
             base.OnModelCreating(modelBuilder);
 
+
+            // Todo: Verify the order of creation of the tables. There ight be an error. 
+
+            // Goes first, has no connections to other tables.
+            CreateCards(modelBuilder); 
             CreateUsers(modelBuilder);
             CreateGames(modelBuilder);
-            CreateGameLogs(modelBuilder);
+
+            // Goes later, has connections to other tables.
             CreatePlayers(modelBuilder);
-            CreateCards(modelBuilder);
             CreatePlayerCards(modelBuilder);
+            CreateGameLogs(modelBuilder);            
 
         }
 
@@ -174,18 +182,27 @@ namespace TEAM11.UNO.PL.Data
                 entity.Property(e => e.IsPaused)
                     .IsRequired();
 
-                entity.HasOne(d => d.User)
+
+                // Todo: tbl Game should not point too the User table. It should point to the Player table. 
+                // Games and Users have a Many-to-Many relationship. 
+                // The Player table is the bridge table between the two.
+
+/*                entity.HasOne(d => d.User)
                 .WithMany(p => p.Games)
                 .HasForeignKey(d => d.UserId)
                 .HasConstraintName("fk_tblGame_UserId")
-                .OnDelete(DeleteBehavior.Restrict);
+                .OnDelete(DeleteBehavior.Restrict);*/
 
 
                 List<tblGame> games = new List<tblGame>
-                {
+                {/*
                     new tblGame { Id = gameId[0], Name = "TestGame", UserId = userId[0], IsPaused = false },
                     new tblGame { Id = gameId[1], Name = "TestGame2", UserId = userId[1], IsPaused = false },
-                    new tblGame { Id = gameId[2], Name = "TestGame3", UserId = userId[2], IsPaused = false },
+                    new tblGame { Id = gameId[2], Name = "TestGame3", UserId = userId[2], IsPaused = false },*/
+                    
+                    new tblGame { Id = gameId[0], Name = "TestGame", IsPaused = false },
+                    new tblGame { Id = gameId[1], Name = "TestGame2", IsPaused = false },
+                    new tblGame { Id = gameId[2], Name = "TestGame3", IsPaused = false },
                 };
 
 
@@ -272,6 +289,11 @@ namespace TEAM11.UNO.PL.Data
                     new tblPlayer { Id = playerId[0], IsComputerPlayer = false, UserId = userId[0], GameId = gameId[0]  },
                     new tblPlayer { Id = playerId[1], IsComputerPlayer = false, UserId = userId[1], GameId = gameId[1]  },
                     new tblPlayer { Id = playerId[2], IsComputerPlayer = false, UserId = userId[2], GameId = gameId[2]  },
+
+                    // Todo: Add a computer player to the game.
+/*                    new tblPlayer { Id = playerId[3], IsComputerPlayer = true, UserId = userId[3], GameId = gameId[0]  },
+                    new tblPlayer { Id = playerId[4], IsComputerPlayer = true, UserId = userId[4], GameId = gameId[1]  },
+                    new tblPlayer { Id = playerId[5], IsComputerPlayer = true, UserId = userId[5], GameId = gameId[2]  },*/
                 };
 
                 modelBuilder.Entity<tblPlayer>().HasData(players);
