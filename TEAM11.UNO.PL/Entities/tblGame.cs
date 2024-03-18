@@ -11,11 +11,6 @@ namespace TEAM11.UNO.PL.Entities
         public Guid Id { get; set; }
         public string Name { get; set; }
         public bool IsPaused {  get; set; }
-
-        // Connection among tables.
-/*        public Guid UserId {  get; set; }
-        public virtual tblUser User { get; set; }*/
-
         public virtual ICollection<tblGameLog> Gamelogs { get; set; }
         public virtual ICollection<tblPlayer> Players { get; set; }
     }

@@ -18,5 +18,8 @@ namespace TEAM11.UNO.PL.Entities
         public virtual tblGame Game { get; set; }
 
         public virtual ICollection<tblPlayerCard> Playercards { get; set; }
+
+        // Foreign key relationship to tblGame.
+        public virtual ICollection<tblGame> Games { get; set; }
     }
 }
