@@ -16,9 +16,9 @@ namespace TEAM11.UNO.PL.Data
         Guid[] cardId = new Guid[54];
         Guid[] gameId = new Guid[4];
         Guid[] gamelogId = new Guid[3];
-        Guid[] playerId = new Guid[4];
+        Guid[] playerId = new Guid[6];
         Guid[] playercardId = new Guid[4];
-        Guid[] userId = new Guid[4];
+        Guid[] userId = new Guid[5];
 
         public virtual DbSet<tblCard> tblCards { get; set; }
         public virtual DbSet<tblGame> tblGames { get; set; }
@@ -182,29 +182,12 @@ namespace TEAM11.UNO.PL.Data
                 entity.Property(e => e.IsPaused)
                     .IsRequired();
 
-
-                // Todo: tbl Game should not point too the User table. It should point to the Player table. 
-                // Games and Users have a Many-to-Many relationship. 
-                // The Player table is the bridge table between the two.
-
-/*                entity.HasOne(d => d.User)
-                .WithMany(p => p.Games)
-                .HasForeignKey(d => d.UserId)
-                .HasConstraintName("fk_tblGame_UserId")
-                .OnDelete(DeleteBehavior.Restrict);*/
-
-
                 List<tblGame> games = new List<tblGame>
-                {/*
-                    new tblGame { Id = gameId[0], Name = "TestGame", UserId = userId[0], IsPaused = false },
-                    new tblGame { Id = gameId[1], Name = "TestGame2", UserId = userId[1], IsPaused = false },
-                    new tblGame { Id = gameId[2], Name = "TestGame3", UserId = userId[2], IsPaused = false },*/
-                    
-                    new tblGame { Id = gameId[0], Name = "TestGame", IsPaused = false },
-                    new tblGame { Id = gameId[1], Name = "TestGame2", IsPaused = false },
-                    new tblGame { Id = gameId[2], Name = "TestGame3", IsPaused = false },
+                {   
+                    new tblGame { Id = gameId[0], Name = "Test Game 1", IsPaused = false },
+                    new tblGame { Id = gameId[1], Name = "Test Game 2", IsPaused = false },
+                    new tblGame { Id = gameId[2], Name = "Test Game 3", IsPaused = false }
                 };
-
 
                 modelBuilder.Entity<tblGame>().HasData(games);
 
@@ -240,9 +223,9 @@ namespace TEAM11.UNO.PL.Data
 
                 List<tblGameLog> gamelogs = new List<tblGameLog>
                 {
-                    new tblGameLog { Id = gamelogId[0], Description = "TestGameLog", Timestamp = "TestStamp", GameId = gameId[0] },
-                    new tblGameLog { Id = gamelogId[1], Description = "TestGameLog2", Timestamp = "TestStamp2", GameId = gameId[1] },
-                    new tblGameLog { Id = gamelogId[2], Description = "TestGameLog3", Timestamp = "TestStamp3", GameId = gameId[2] },
+                    new tblGameLog { Id = gamelogId[0], Description = "Test Game Log 1", Timestamp = "Test Stamp 1", GameId = gameId[0] },
+                    new tblGameLog { Id = gamelogId[1], Description = "Test Game Log 2", Timestamp = "Test Stamp 2", GameId = gameId[1] },
+                    new tblGameLog { Id = gamelogId[2], Description = "Test Game Log 3", Timestamp = "Test Stamp 3", GameId = gameId[2] },
                 };
 
                 modelBuilder.Entity<tblGameLog>().HasData(gamelogs);
@@ -267,6 +250,8 @@ namespace TEAM11.UNO.PL.Data
                     .IsRequired()
                     .HasDefaultValue(false);
 
+                // Junction table User and Game.
+
                 // User
 
                 entity.HasOne(d => d.User)
@@ -282,18 +267,15 @@ namespace TEAM11.UNO.PL.Data
                 .HasForeignKey(d => d.GameId)
                 .HasConstraintName("fk_tblPlayer_GameId");
 
-
-
                 List<tblPlayer> players = new List<tblPlayer>
                 {
                     new tblPlayer { Id = playerId[0], IsComputerPlayer = false, UserId = userId[0], GameId = gameId[0]  },
                     new tblPlayer { Id = playerId[1], IsComputerPlayer = false, UserId = userId[1], GameId = gameId[1]  },
                     new tblPlayer { Id = playerId[2], IsComputerPlayer = false, UserId = userId[2], GameId = gameId[2]  },
 
-                    // Todo: Add a computer player to the game.
-/*                    new tblPlayer { Id = playerId[3], IsComputerPlayer = true, UserId = userId[3], GameId = gameId[0]  },
-                    new tblPlayer { Id = playerId[4], IsComputerPlayer = true, UserId = userId[4], GameId = gameId[1]  },
-                    new tblPlayer { Id = playerId[5], IsComputerPlayer = true, UserId = userId[5], GameId = gameId[2]  },*/
+                    new tblPlayer { Id = playerId[3], IsComputerPlayer = true, UserId = userId[3], GameId = gameId[0]  },
+                    new tblPlayer { Id = playerId[4], IsComputerPlayer = true, UserId = userId[3], GameId = gameId[1]  },
+                    new tblPlayer { Id = playerId[5], IsComputerPlayer = true, UserId = userId[3], GameId = gameId[2]  },
                 };
 
                 modelBuilder.Entity<tblPlayer>().HasData(players);
@@ -312,6 +294,8 @@ namespace TEAM11.UNO.PL.Data
                 entity.ToTable("tblPlayerCard");
 
                 entity.Property(e => e.Id).ValueGeneratedNever();
+
+                // Junction table Card and Player.
 
                 // Card 
 
@@ -376,7 +360,8 @@ namespace TEAM11.UNO.PL.Data
                 {
                     new tblUser { Id = userId[0], Username = "Austin", Password = GetHash("Austin"), FirstName = "Austin", LastName = "Steffes"},
                     new tblUser { Id = userId[1], Username = "Carlos", Password = GetHash("Carlos"), FirstName = "Carlos", LastName = "Guzman"},
-                    new tblUser { Id = userId[2], Username = "Brian", Password = GetHash("Brian"), FirstName = "Brian", LastName = "Foote"}
+                    new tblUser { Id = userId[2], Username = "Brian", Password = GetHash("Brian"), FirstName = "Brian", LastName = "Foote"},
+                    new tblUser { Id = userId[3], Username = "NPC", Password = GetHash("NPC"), FirstName = "NPC", LastName = "NPC"}
                 };
 
                 modelBuilder.Entity<tblUser>().HasData(users);
