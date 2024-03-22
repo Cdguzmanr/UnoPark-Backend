@@ -184,9 +184,9 @@ namespace TEAM11.UNO.PL.Data
 
                 List<tblGame> games = new List<tblGame>
                 {   
-                    new tblGame { Id = gameId[0], Name = "Test Game 1", IsPaused = false },
-                    new tblGame { Id = gameId[1], Name = "Test Game 2", IsPaused = false },
-                    new tblGame { Id = gameId[2], Name = "Test Game 3", IsPaused = false }
+                    new tblGame { Id = gameId[0], Name = "Test Game 1", CurrentTurnUserId = userId[0], IsPaused = false },
+                    new tblGame { Id = gameId[1], Name = "Test Game 2", CurrentTurnUserId = userId[1], IsPaused = false },
+                    new tblGame { Id = gameId[2], Name = "Test Game 3", CurrentTurnUserId = userId[2], IsPaused = false }
                 };
 
                 modelBuilder.Entity<tblGame>().HasData(games);
