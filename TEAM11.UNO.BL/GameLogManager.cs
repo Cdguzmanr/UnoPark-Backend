@@ -14,12 +14,12 @@ namespace TEAM11.UNO.BL
         }
 
 
-        public int Insert(GameLog card, bool rollback = false)
+        public int Insert(GameLog gameLog, bool rollback = false)
         {
             try
             {
-                tblGameLog row = new tblGameLog { Id = card.Id, GameId = card.GameId, Description = card.Description, Timestamp = card.Timestamp}; // GameId, Description, Timestamp
-                card.Id = row.Id;
+                tblGameLog row = new tblGameLog { Id = gameLog.Id, GameId = gameLog.GameId, Description = gameLog.Description, Timestamp = gameLog.Timestamp}; // GameId, Description, Timestamp
+                gameLog.Id = row.Id;
                 return base.Insert(row, rollback);
             }
             catch (Exception ex)
@@ -27,16 +27,16 @@ namespace TEAM11.UNO.BL
                 throw ex;
             }
         }
-        public int Update(GameLog card, bool rollback = false)
+        public int Update(GameLog gameLog, bool rollback = false)
         {
             try
             {
                 return base.Update(new tblGameLog
                 {
-                    Id = card.Id,
-                    GameId = card.GameId,
-                    Description = card.Description,
-                    Timestamp = card.Timestamp
+                    Id = gameLog.Id,
+                    GameId = gameLog.GameId,
+                    Description = gameLog.Description,
+                    Timestamp = gameLog.Timestamp
                 },
                 rollback);
             }
@@ -88,14 +88,14 @@ namespace TEAM11.UNO.BL
 
                 if (row != null)
                 {
-                    GameLog card = new GameLog
+                    GameLog gameLog = new GameLog
                     {
                         Id = row.Id,
                         GameId = row.GameId,
                         Description = row.Description,
                         Timestamp = row.Timestamp
                     };
-                    return card;
+                    return gameLog;
                 }
                 else
                 {
