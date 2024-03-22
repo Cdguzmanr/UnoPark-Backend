@@ -25,7 +25,7 @@ namespace TEAM11.UNO.PL.Test
                 Id = Guid.NewGuid(),
                 Name = "Test",
                 IsPaused = false,
-                //UserId = base.LoadTest().FirstOrDefault().UserId // Foreign Key
+                CurrentTurnUserId = base.LoadTest().FirstOrDefault().CurrentTurnUserId
 
             });
             Assert.AreEqual(1, rowsAffected);
