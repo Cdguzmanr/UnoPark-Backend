@@ -16,7 +16,8 @@ namespace TEAM11.UNO.BL.Models
         public Guid GameId { get; set; }
 
         public string Username { get; set; } // This is the name of the player.
-        public string GameName { get; set; } // This is the name of the game the player is playing.
+        
+        //public string GameName { get; set; } // This is the name of the game the player is playing.
 
         public List<Card> Playercards { get; set; }
     }
