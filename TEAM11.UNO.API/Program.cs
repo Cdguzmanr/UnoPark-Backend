@@ -47,7 +47,6 @@ public class Program
 
             // This breaks I do not know why, (could not find file error)
             c.IncludeXmlComments(xmlpath);
-
         });
 
         // Getting secret.
