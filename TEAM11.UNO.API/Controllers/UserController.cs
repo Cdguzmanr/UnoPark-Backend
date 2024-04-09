@@ -7,5 +7,6 @@ namespace TEAM11.UNO.API.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
+
     }
 }

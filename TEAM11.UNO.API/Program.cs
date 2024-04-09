@@ -44,11 +44,14 @@ public class Program
 
             var xmlfile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
             var xmlpath = Path.Combine(AppContext.BaseDirectory, xmlfile);
-            c.IncludeXmlComments(xmlpath);
+
+            // This breaks I do not know why, (could not find file error)
+            //c.IncludeXmlComments(xmlpath);
 
         });
 
-        string connectionString = GetSecret("UnoProject").Result;
+        // Getting secret.
+        string connectionString = GetSecret("WebAPIKey").Result;
 
         // Add database connection information.
         builder.Services.AddDbContextPool<UNOEntities>(options =>
