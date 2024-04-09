@@ -13,9 +13,9 @@ namespace TEAM11.UNO.API.Controllers
     {
 
         private readonly DbContextOptions<UNOEntities> options;
-        private readonly ILogger<CardController> logger;
+        private readonly ILogger<UserController> logger;
 
-        public CardController(ILogger<CardController> logger, DbContextOptions<UNOEntities> options)
+        public UserController(ILogger<UserController> logger, DbContextOptions<UNOEntities> options)
         {
             this.options = options;
             this.logger = logger;
@@ -23,11 +23,11 @@ namespace TEAM11.UNO.API.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<Card> Get()
+        public IEnumerable<User> Get()
         {
             try
             {
-                return new CardManager(options).Load();
+                return new UserManager(options).Load();
             }
             catch (Exception ex)
             {
@@ -37,11 +37,11 @@ namespace TEAM11.UNO.API.Controllers
         }
 
         [HttpGet("{id}")]
-        public Card Get(Guid id)
+        public User Get(Guid id)
         {
             try
             {
-                return new CardManager(options).LoadById(id);
+                return new UserManager(options).LoadById(id);
             }
             catch (Exception ex)
             {
@@ -52,11 +52,11 @@ namespace TEAM11.UNO.API.Controllers
         }
 
         [HttpPost("{rollback?}")]
-        public int Post([FromBody] Card card, bool rollback = false)
+        public int Post([FromBody] User user, bool rollback = false)
         {
             try
             {
-                return new CardManager(options).Insert(card, rollback);
+                return new UserManager(options).Insert(user, rollback);
             }
             catch (Exception ex)
             {
@@ -66,11 +66,11 @@ namespace TEAM11.UNO.API.Controllers
         }
 
         [HttpPut("{id}/{rollback?}")]
-        public int Put(Guid id, [FromBody] Card card, bool rollback = false)
+        public int Put(Guid id, [FromBody] User user, bool rollback = false)
         {
             try
             {
-                return new CardManager(options).Update(card, rollback);
+                return new UserManager(options).Update(user, rollback);
             }
             catch (Exception ex)
             {
@@ -84,7 +84,7 @@ namespace TEAM11.UNO.API.Controllers
         {
             try
             {
-                return new CardManager(options).Delete(id, rollback);
+                return new UserManager(options).Delete(id, rollback);
             }
             catch (Exception ex)
             {
