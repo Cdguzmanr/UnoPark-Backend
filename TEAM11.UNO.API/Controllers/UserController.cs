@@ -19,7 +19,7 @@ namespace TEAM11.UNO.API.Controllers
         {
             this.options = options;
             this.logger = logger;
-            logger.LogWarning("Card Controller Check");
+            logger.LogWarning("User Controller Check");
         }
 
         [HttpGet]

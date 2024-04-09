@@ -18,7 +18,7 @@ namespace TEAM11.UNO.API.Controllers
         {
             this.options = options;
             this.logger = logger;
-            logger.LogWarning("GameLog Controller Check");
+            logger.LogWarning("Game Log Controller Check");
         }
 
         [HttpGet]
