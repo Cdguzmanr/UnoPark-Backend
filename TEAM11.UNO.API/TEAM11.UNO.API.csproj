@@ -23,6 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\TEAM11.UNO.BL\TEAM11.UNO.BL.csproj" />
     <ProjectReference Include="..\TEAM11.UNO.PL\TEAM11.UNO.PL.csproj" />
   </ItemGroup>
 
