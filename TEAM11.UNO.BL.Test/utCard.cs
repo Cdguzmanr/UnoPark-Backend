@@ -1,6 +1,7 @@
 ﻿
 using Castle.Core.Resource;
 using Microsoft.Extensions.Options;
+using TEAM11.UNO.BL;
 
 namespace TEAM11.UNO.BL.Test
 {
