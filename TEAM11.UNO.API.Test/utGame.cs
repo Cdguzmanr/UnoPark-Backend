@@ -7,6 +7,7 @@ using TEAM11.UNO.BL.Models;
 
 namespace TEAM11.UNO.API.Test
 {
+    [TestClass]
     public class utGame : utBase
     {
         [TestMethod]
