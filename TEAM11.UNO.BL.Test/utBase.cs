@@ -11,8 +11,8 @@ namespace TEAM11.UNO.BL.Test
     {
         protected UNOEntities dc;  // declare the DataContext
         protected IDbContextTransaction transaction;
-        private IConfigurationRoot _configuration;
-        private DbContextOptions<UNOEntities> options;
+        public IConfigurationRoot _configuration;
+        public DbContextOptions<UNOEntities> options;
 
         public utBase()
         {

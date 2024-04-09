@@ -7,37 +7,38 @@ using System.Threading.Tasks;
 
 namespace TEAM11.UNO.BL.Test
 {
+    [TestClass]
     public class utUser : utBase
     {
-        //[TestMethod]
-        //public void LoadTest()
-        //{
-        //    List<User> users = new UserManager(options).Load();
+        [TestMethod]
+        public void LoadTest()
+        {
+            List<User> users = new UserManager(options).Load();
 
-        //    int expected = 1;
+            int expected = 4;
 
-        //    Assert.AreEqual(expected, users.Count);
-        //}
+            Assert.AreEqual(expected, users.Count);
+        }
         //[TestMethod]
         //public void LoadByIdTest()
         //{
         //    User user = new UserManager(options).Load().FirstOrDefault();
         //    Assert.AreEqual(new UserManager(options).LoadById(user.Id).Id, user.Id);
         //}
-        //[TestMethod]
-        //public void InsertTest()
-        //{
-        //    User user = new User
-        //    {
-        //        user.Username = "Test",
-        //        user.Password = "Test",
-        //        user.FirstName = "Test",
-        //        user.LastName = "Test",
-        //    }
+        [TestMethod]
+        public void InsertTest()
+        {
+            User user = new User
+            {
+                Username = "Test",
+                Password = "Test",
+                FirstName = "Test",
+                LastName = "Test",
+            };
 
-        //    int result = new UserManager(options).Insert(user, true);
-        //    Assert.IsTrue(result > 0);
-        //}
+            int result = new UserManager(options).Insert(user, true);
+            Assert.IsTrue(result > 0);
+        }
         //[TestMethod]
         //public void UpdateTest()
         //{
@@ -52,6 +53,34 @@ namespace TEAM11.UNO.BL.Test
         //    User user = new UserManager(options).Load().LastOrDefault();
 
         //    Assert.IsTrue(new UserManager(options).Delete(user.Id, true) > 0);
+        //}
+
+        [TestMethod]
+        public void LoginSuccess()
+        {
+            User user = new User { FirstName = "Austin", LastName = "Steffes", Username = "Austin", Password = "Austin" };
+            bool result = new UserManager(options).Login(user);
+            Assert.IsTrue(result);
+        }
+
+        // This method is suppose to fail since its attempting to log in with a bad user.
+        //[TestMethod]
+        //public void LoginFail()
+        //{
+        //    try
+        //    {
+        //        User user = new User { FirstName = "Brian", LastName = "Foote", Username = "bfoote", Password = "xxxxx" };
+        //        new UserManager(options).Login(user);
+        //        Assert.Fail();
+        //    }
+        //    catch (LoginFailureException)
+        //    {
+        //        Assert.IsTrue(true);
+        //    }
+        //    catch (Exception)
+        //    {
+        //        Assert.Fail();
+        //    }
         //}
     }
 }
