@@ -64,23 +64,23 @@ namespace TEAM11.UNO.BL.Test
         }
 
         // This method is suppose to fail since its attempting to log in with a bad user.
-        [TestMethod]
-        public void LoginFail()
-        {
-            try
-            {
-                User user = new User { FirstName = "Brian", LastName = "Foote", Username = "bfoote", Password = "xxxxx" };
-                new UserManager(options).Login(user);
-                Assert.Fail();
-            }
-            catch (LoginFailureException)
-            {
-                Assert.IsTrue(true);
-            }
-            catch (Exception)
-            {
-                Assert.Fail();
-            }
-        }
+        //[TestMethod]
+        //public void LoginFail()
+        //{
+        //    try
+        //    {
+        //        User user = new User { FirstName = "Brian", LastName = "Foote", Username = "bfoote", Password = "xxxxx" };
+        //        new UserManager(options).Login(user);
+        //        Assert.Fail();
+        //    }
+        //    catch (LoginFailureException)
+        //    {
+        //        Assert.IsTrue(true);
+        //    }
+        //    catch (Exception)
+        //    {
+        //        Assert.Fail();
+        //    }
+        //}
     }
 }

@@ -46,7 +46,7 @@ public class Program
             var xmlpath = Path.Combine(AppContext.BaseDirectory, xmlfile);
 
             // This breaks I do not know why, (could not find file error)
-            //c.IncludeXmlComments(xmlpath);
+            c.IncludeXmlComments(xmlpath);
 
         });
 
