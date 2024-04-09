@@ -39,7 +39,7 @@ namespace TEAM11.UNO.API.Test
         [TestMethod]
         public async Task UpdateTestAsync()
         {
-            GameLog gameLog = new GameLog { Description = "Test" };
+            GameLog gameLog = new GameLog { Description = "Test", Timestamp = "Test" };
             await base.UpdateTestAsync<GameLog>(new KeyValuePair<string, string>("Description", "Test Game Log 1"), gameLog);
 
         }
