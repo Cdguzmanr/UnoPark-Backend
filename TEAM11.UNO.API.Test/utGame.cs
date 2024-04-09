@@ -12,34 +12,34 @@ namespace TEAM11.UNO.API.Test
         [TestMethod]
         public async Task LoadTestAsync()
         {
-            await base.LoadTestAsync<Card>();
+            await base.LoadTestAsync<Game>();
         }
 
         [TestMethod]
         public async Task InsertTestAsync()
         {
-            Card card = new Card { Description = "Test" };
-            await base.InsertTestAsync<Card>(card);
+            Game game = new Game { Name = "Test", IsPaused = true };
+            await base.InsertTestAsync<Game>(game);
 
         }
 
         [TestMethod]
         public async Task DeleteTestAsync()
         {
-            await base.DeleteTestAsync<Card>(new KeyValuePair<string, string>("Description", "DVD"));
+            await base.DeleteTestAsync<Game>(new KeyValuePair<string, string>("Name", "Test Game 1"));
         }
 
         [TestMethod]
         public async Task LoadByIdTestAsync()
         {
-            await base.LoadByIdTestAsync<Card>(new KeyValuePair<string, string>("Description", "DVD"));
+            await base.LoadByIdTestAsync<Game>(new KeyValuePair<string, string>("Name", "Test Game 1"));
         }
 
         [TestMethod]
         public async Task UpdateTestAsync()
         {
-            Card card = new Card { Description = "Test" };
-            await base.UpdateTestAsync<Card>(new KeyValuePair<string, string>("Description", "DVD"), format);
+            Game game = new Game { Name = "Test" };
+            await base.UpdateTestAsync<Game>(new KeyValuePair<string, string>("Name", "Test Game 1"), game);
 
         }
     }
