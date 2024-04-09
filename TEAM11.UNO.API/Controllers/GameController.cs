@@ -13,7 +13,7 @@ namespace TEAM11.UNO.API.Controllers
     {
 
         private readonly DbContextOptions<UNOEntities> options;
-        private readonly ILogger<CardController> logger;
+        private readonly ILogger<GameController> logger;
 
         public GameController(ILogger<GameController> logger, DbContextOptions<UNOEntities> options)
         {
