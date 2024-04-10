@@ -39,6 +39,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\TEAM11.UNO.API\TEAM11.UNO.API.csproj" />
     <ProjectReference Include="..\TEAM11.UNO.BL.Models\TEAM11.UNO.BL.Models.csproj" />
   </ItemGroup>
 
