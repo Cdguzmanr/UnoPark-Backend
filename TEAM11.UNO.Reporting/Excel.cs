@@ -3,7 +3,7 @@ using iText.Kernel.Pdf;
 using iText.Layout;
 using iText.Layout.Element;
 
-namespace Team11.Uno.Reporting
+namespace TEAM11.UNO.Reporting
 {
     public static class Excel
     {
