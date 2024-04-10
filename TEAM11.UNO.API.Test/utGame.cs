@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TEAM11.UNO.BL;
 using TEAM11.UNO.BL.Models;
 
 namespace TEAM11.UNO.API.Test
