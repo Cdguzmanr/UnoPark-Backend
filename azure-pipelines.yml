@@ -32,7 +32,7 @@ steps:
   displayName: Build API Project
   inputs:
     command: build
-    projects: 'UNO/TEAM11.UNO.API/TEAM11.UNO.API.csproj'
+    projects: 'Uno/TEAM11.UNO.API/TEAM11.UNO.API.csproj'
     arguments: '--configuration Debug'
 
 - task: DotNetCoreCLI@2
