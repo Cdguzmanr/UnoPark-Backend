@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TEAM11.UNO.Reporting;
 
 namespace TEAM11.UNO.BL.Test
 {
@@ -51,6 +52,16 @@ namespace TEAM11.UNO.BL.Test
             Game game = new GameManager(options).Load().LastOrDefault();
 
             Assert.IsTrue(new GameManager(options).Delete(game.Id, true) > 0);
+        }
+
+        [TestMethod]
+        public void ReportGameTest()
+        {
+            var games = new GameManager(options).Load();
+            string[] columns = { "Name" };
+            var data = GameManager.ConvertData<Game>(games, columns);
+
+            Excel.Export("games.xlsx", data);
         }
     }
 }

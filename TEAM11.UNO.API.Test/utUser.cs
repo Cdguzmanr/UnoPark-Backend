@@ -27,21 +27,20 @@ namespace TEAM11.UNO.API.Test
         [TestMethod]
         public async Task DeleteTestAsync()
         {
-            await base.DeleteTestAsync<User>(new KeyValuePair<string, string>("Username", "Austin"));
+            await base.DeleteTestAsync<User>(new KeyValuePair<string, string>("Username", "kvicchiollo"));
         }
 
         [TestMethod]
         public async Task LoadByIdTestAsync()
         {
-            await base.LoadByIdTestAsync<User>(new KeyValuePair<string, string>("Username", "Austin"));
+            await base.LoadByIdTestAsync<User>(new KeyValuePair<string, string>("LastName", "Steffes"));
         }
 
         [TestMethod]
         public async Task UpdateTestAsync()
         {
-            User user = new User { Username = "Test" };
-            await base.UpdateTestAsync<User>(new KeyValuePair<string, string>("Username", "Austin"), user);
-
+            User user = new User { Username = "Test", FirstName = "Test", LastName = "Test", Password = "Test" };
+            await base.UpdateTestAsync<User>(new KeyValuePair<string, string>("Username", "kvicchiollo"), user);
         }
     }
 }

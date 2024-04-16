@@ -2,6 +2,7 @@
 using Castle.Core.Resource;
 using Microsoft.Extensions.Options;
 using TEAM11.UNO.BL;
+using TEAM11.UNO.Reporting;
 
 namespace TEAM11.UNO.BL.Test
 {
@@ -52,5 +53,16 @@ namespace TEAM11.UNO.BL.Test
 
             Assert.IsTrue(new CardManager(options).Delete(card.Id, true) > 0);
         }
+
+        [TestMethod]
+        public void ReportCardTest()
+        {
+            var cards = new CardManager(options).Load();
+            string[] columns = { "Name", "Color", "Type" };
+            var data = CardManager.ConvertData<Card>(cards, columns);
+
+            Excel.Export("cards.xlsx", data);
+        }
+
     }
 }

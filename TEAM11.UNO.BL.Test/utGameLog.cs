@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TEAM11.UNO.Reporting;
 
 namespace TEAM11.UNO.BL.Test
 {
@@ -51,6 +52,16 @@ namespace TEAM11.UNO.BL.Test
             GameLog gameLog = new GameLogManager(options).Load().LastOrDefault();
 
             Assert.IsTrue(new GameLogManager(options).Delete(gameLog.Id, true) > 0);
+        }
+
+        [TestMethod]
+        public void ReportGameLogTest()
+        {
+            var gamelogs = new GameLogManager(options).Load();
+            string[] columns = { "Description", "Timestamp" };
+            var data = GameLogManager.ConvertData<GameLog>(gamelogs, columns);
+
+            Excel.Export("gamelogs.xlsx", data);
         }
     }
 }
