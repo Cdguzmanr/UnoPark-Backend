@@ -43,7 +43,6 @@ namespace TEAM11.UNO.API.Test
             HttpResponseMessage response = client.DeleteAsync(typeof(T).Name + "/" + id + "/" + rollback).Result;
             string result = response.Content.ReadAsStringAsync().Result;
             Assert.IsTrue(Convert.ToInt32(result) > 0);
-
         }
 
         private async Task<Guid> GetId<T>(KeyValuePair<string, string> filter)

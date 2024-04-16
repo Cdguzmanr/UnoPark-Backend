@@ -358,10 +358,10 @@ namespace TEAM11.UNO.PL.Data
 
                 List<tblUser> users = new List<tblUser>
                 {
-                    new tblUser { Id = userId[0], Username = "Austin", Password = GetHash("Austin"), FirstName = "Austin", LastName = "Steffes"},
-                    new tblUser { Id = userId[1], Username = "Carlos", Password = GetHash("Carlos"), FirstName = "Carlos", LastName = "Guzman"},
-                    new tblUser { Id = userId[2], Username = "Brian", Password = GetHash("Brian"), FirstName = "Brian", LastName = "Foote"},
-                    new tblUser { Id = userId[3], Username = "NPC", Password = GetHash("NPC"), FirstName = "NPC", LastName = "NPC"}
+                    new tblUser { Id = userId[0], Username = "asteffes", Password = GetHash("Austin"), FirstName = "Austin", LastName = "Steffes"},
+                    new tblUser { Id = userId[1], Username = "cguzman", Password = GetHash("Carlos"), FirstName = "Carlos", LastName = "Guzman"},
+                    new tblUser { Id = userId[2], Username = "bfoote", Password = GetHash("Brian"), FirstName = "Brian", LastName = "Foote"},
+                    new tblUser { Id = userId[3], Username = "nonplayercharacter", Password = GetHash("NPC"), FirstName = "NPC", LastName = "NPC"}
                 };
 
                 modelBuilder.Entity<tblUser>().HasData(users);

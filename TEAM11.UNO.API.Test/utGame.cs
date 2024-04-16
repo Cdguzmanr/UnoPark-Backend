@@ -40,7 +40,7 @@ namespace TEAM11.UNO.API.Test
         [TestMethod]
         public async Task UpdateTestAsync()
         {
-            Game game = new Game { Name = "Test", IsPaused = false, Gamelogs = null, Players = null };
+            Game game = new Game { Name = "Test", IsPaused = false, Gamelogs = new List<GameLog>(), Players = new List<Player>() };
             await base.UpdateTestAsync<Game>(new KeyValuePair<string, string>("Name", "Test Game 1"), game);
 
         }
