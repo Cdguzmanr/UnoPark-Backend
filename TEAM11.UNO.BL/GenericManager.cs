@@ -19,6 +19,29 @@ namespace TEAM11.UNO.BL
 
         public GenericManager() { }
 
+        public static string[,] ConvertData<U>(List<U> entities, string[] columns) where U : class
+        {
+            string[,] data = new string[entities.Count + 1, columns.Length];
+
+            int counter = 0;
+            for (int i = 0; i < columns.Length; i++)
+            {
+                data[counter, i] = columns[i];
+            }
+            counter++;
+
+
+            foreach (var entity in entities)
+            {
+                for (int i = 0; i < columns.Length; i++)
+                {
+                    data[counter, i] = entity.GetType().GetProperty(columns[i]).GetValue(entity, null).ToString();
+                }
+                counter++;
+            }
+            return data;
+        }
+
         public List<T> Load()
         {
             try
