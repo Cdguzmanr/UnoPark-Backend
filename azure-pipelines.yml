@@ -28,16 +28,11 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-- task: VSTest@2
-  inputs:
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
-
 - task: DotNetCoreCLI@2
   displayName: Build API Project
   inputs:
     command: build
-    projects: 'TEAM11.UNO/TEAM11.UNO.API/TEAM11.UNO.API.csproj'
+    projects: 'TEAM11.UNO.API/TEAM11.UNO.API.csproj'
     arguments: '--configuration Debug'
 
 - task: DotNetCoreCLI@2
