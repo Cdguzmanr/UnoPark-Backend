@@ -58,7 +58,7 @@ namespace TEAM11.UNO.BL.Test
         [TestMethod]
         public void LoginSuccess()
         {
-            User user = new User { FirstName = "Austin", LastName = "Steffes", Username = "Austin", Password = "Austin" };
+            User user = new User { FirstName = "Austin", LastName = "Steffes", Username = "asteffes", Password = "Austin" };
             bool result = new UserManager(options).Login(user);
             Assert.IsTrue(result);
         }
