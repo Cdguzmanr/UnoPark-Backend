@@ -21,10 +21,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TEAM11.UNO.BL.Models", "TEA
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{7EE24CC1-8AE5-4566-973B-6EB0D0260E52}"
 	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\..\..\Downloads\bigprojectapi-300079087.PublishSettings = ..\..\..\..\..\..\Downloads\bigprojectapi-300079087.PublishSettings
 		TextFile1.txt = TextFile1.txt
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TEAM11.UNO.Reporting", "TEAM11.UNO.Reporting\TEAM11.UNO.Reporting.csproj", "{57CACA84-7D85-46BB-8674-DE805E466B07}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TEAM11.UNO.Reporting", "TEAM11.UNO.Reporting\TEAM11.UNO.Reporting.csproj", "{57CACA84-7D85-46BB-8674-DE805E466B07}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApp", "TestApp\TestApp.csproj", "{77E749E0-FDA0-4EF1-A8EA-6A591FC67C08}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -68,6 +71,10 @@ Global
 		{57CACA84-7D85-46BB-8674-DE805E466B07}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57CACA84-7D85-46BB-8674-DE805E466B07}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57CACA84-7D85-46BB-8674-DE805E466B07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77E749E0-FDA0-4EF1-A8EA-6A591FC67C08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77E749E0-FDA0-4EF1-A8EA-6A591FC67C08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77E749E0-FDA0-4EF1-A8EA-6A591FC67C08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77E749E0-FDA0-4EF1-A8EA-6A591FC67C08}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
