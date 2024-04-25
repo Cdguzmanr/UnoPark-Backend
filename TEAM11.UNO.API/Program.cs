@@ -44,8 +44,6 @@ public class Program
 
             var xmlfile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
             var xmlpath = Path.Combine(AppContext.BaseDirectory, xmlfile);
-
-            // This breaks I do not know why, (could not find file error)
             c.IncludeXmlComments(xmlpath);
         });
 
@@ -56,11 +54,11 @@ public class Program
         builder.Services.AddDbContextPool<UNOEntities>(options =>
         {
             //options.UseSqlServer(connectionString);
-            options.UseSqlServer(builder.Configuration.GetConnectionString("UNOConnection"));
+            options.UseSqlServer(builder.Configuration.GetConnectionString("UNOConnection1"));
             options.UseLazyLoadingProxies();
         });
 
-        string connection = builder.Configuration.GetConnectionString("UNOConnection");
+        string connection = builder.Configuration.GetConnectionString("UNOConnection1");
 
         builder.Services.AddSerilogUi(options =>
         {
