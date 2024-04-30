@@ -18,9 +18,10 @@ namespace UnoCardRetriever
                 // Creating local variables needed to figure out if Signal R is working or not.
                 string user = "Uno";
                 string localAddress = "https://localhost:7045/UnoHub";
+                string remoteAddress = "https://bigprojectapi-300079087.azurewebsites.net/UnoHub";
 
                 // Calling Signal R address.
-                var signalRConnection = new SignalRConnection(localAddress);
+                var signalRConnection = new SignalRConnection(remoteAddress);
 
                 Console.WriteLine("Before Signal R is Called");
                 signalRConnection.ConnectToChannel(user);
