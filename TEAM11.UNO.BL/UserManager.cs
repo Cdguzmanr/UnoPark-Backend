@@ -53,7 +53,7 @@ namespace TEAM11.UNO.BL
             try
             {
                 if (!string.IsNullOrEmpty(user.Username))
-                {
+                { 
                     if (!string.IsNullOrEmpty(user.Password))
                     {
                         using (UNOEntities dc = new UNOEntities(options))
