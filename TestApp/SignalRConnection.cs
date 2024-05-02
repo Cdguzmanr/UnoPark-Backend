@@ -19,7 +19,7 @@ namespace TEAM11.UNO.ConsoleApp
                 .WithUrl(hubAddress)
                 .Build();
 
-            _connection.On<string, string>("ReceiveMessage", (s1, s2) => OnSend(s1, s2));
+            _connection.On<string, string>("RecieveMessage", (s1, s2) => OnSend(s1, s2));
 
             _connection.StartAsync();
         }

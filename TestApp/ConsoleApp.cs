@@ -21,7 +21,7 @@ namespace UnoCardRetriever
                 string remoteAddress = "https://bigprojectapi-300079087.azurewebsites.net/UnoHub";
 
                 // Calling Signal R address.
-                var signalRConnection = new SignalRConnection(remoteAddress);
+                var signalRConnection = new SignalRConnection(localAddress);
 
                 Console.WriteLine("Before Signal R is Called");
                 signalRConnection.ConnectToChannel(user);
