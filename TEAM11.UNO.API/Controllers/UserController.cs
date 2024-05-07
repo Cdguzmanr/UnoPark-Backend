@@ -31,12 +31,15 @@ public class UserController : ControllerBase
     private IUserService _userService;
 
 
-    public UserController(IUserService userService, ILogger<UserController> logger, DbContextOptions<UNOEntities> options)
+/*    public UserController(IUserService userService, 
+                          ILogger<UserController> logger, 
+                          DbContextOptions<UNOEntities> options)
     {
         this._userService = userService;
         this.options = options;
         this.logger = logger;
-    }
+        logger.LogWarning("User Controller Check");
+    }*/
 
     [HttpPost("login")]
     public IActionResult Login(User model)

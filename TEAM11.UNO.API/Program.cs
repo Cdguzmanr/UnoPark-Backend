@@ -7,6 +7,8 @@ using Serilog;
 using Serilog.Ui.MsSqlServerProvider;
 using Serilog.Ui.Web;
 using System.Reflection;
+using WebApi.Helpers;
+using WebApi.Services;
 
 public class Program
 {
@@ -33,7 +35,7 @@ public class Program
             c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
             {
                 Title = "Uno Game API",
-                Version = "v1",
+                Version = "v1.5",
                 Contact = new Microsoft.OpenApi.Models.OpenApiContact
                 {
                     Name = "Austin, Carlos",
@@ -53,13 +55,21 @@ public class Program
         // Add database connection information.
         builder.Services.AddDbContextPool<UNOEntities>(options =>
         {
-            //options.UseSqlServer(connectionString);
             options.UseSqlServer(builder.Configuration.GetConnectionString("UNOConnection1"));
+            //options.UseSqlServer(connectionString);
             options.UseLazyLoadingProxies();
         });
 
-        string connection = builder.Configuration.GetConnectionString("UNOConnection1");
 
+        // ----------
+        // configure strongly typed settings object
+        builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSettings"));
+        // configure DI for application services
+        builder.Services.AddScoped<IUserService, UserService>();
+        // --------
+
+        string connection = builder.Configuration.GetConnectionString("UNOConnection1");
+        
         builder.Services.AddSerilogUi(options =>
         {
             options.UseSqlServer(connection, "Logs");
@@ -95,11 +105,14 @@ public class Program
         });
 
         // Configure the HTTP request pipeline.
-        if (app.Environment.IsDevelopment())
+        if (app.Environment.IsDevelopment() || true) // NOTE: Added this line: || true
         {
             app.UseSwagger();
             app.UseSwaggerUI();
         }
+
+        // custom jwt auth middleware
+        app.UseMiddleware<JwtMiddleware>();
 
         app.UseHttpsRedirection();
         app.UseRouting();
