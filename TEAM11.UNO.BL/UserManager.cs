@@ -19,7 +19,7 @@ namespace TEAM11.UNO.BL
         public UserManager(DbContextOptions<UNOEntities> options) : base(options) { }
 
 
-        private string GetHash(string Password)
+        public static string GetHash(string Password)
         {
             using (var hasher = new System.Security.Cryptography.SHA1Managed())
             {
