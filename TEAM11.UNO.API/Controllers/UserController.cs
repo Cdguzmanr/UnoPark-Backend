@@ -7,6 +7,7 @@ using TEAM11.UNO.PL.Data;
 using WebApi.Models;
 using WebApi.Services;
 using WebApi.Helpers;
+using Microsoft.AspNetCore.Identity;
 
 namespace TEAM11.UNO.API.Controllers;
 
@@ -40,7 +41,7 @@ public class UserController : ControllerBase
         this.logger = logger;
         logger.LogWarning("User Controller Check");
     }*/
-
+/*
     [HttpPost("login")]
     public IActionResult Login(User model)
     {
@@ -62,7 +63,33 @@ public class UserController : ControllerBase
             logger.LogWarning("Authentication unsuccessful for {UserId}:{1}", model.Username, ex.Message);
             return BadRequest(new { message = ex.Message });
         }
+    }*/
+
+    [HttpPost("login")]
+    public IActionResult Login(UserLoginDto userDto)
+    {
+        try
+        {
+            bool isLoggedIn = new UserManager(options).Login(userDto.Username, userDto.Password);
+            if (isLoggedIn)
+            {
+                return Ok(new { Message = "Login successful" });
+            }
+            else
+            {
+                return Unauthorized(new { Error = "Invalid username or password" });
+            }
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { Error = ex.Message });
+        }
     }
+
+
+
+
+
 
 
     [HttpPost("authenticate")]

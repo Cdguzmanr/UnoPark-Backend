@@ -55,7 +55,7 @@ public class Program
         // Add database connection information.
         builder.Services.AddDbContextPool<UNOEntities>(options =>
         {
-            options.UseSqlServer(builder.Configuration.GetConnectionString("UNOConnection1"));
+            options.UseSqlServer(builder.Configuration.GetConnectionString("UNOConnection"));
             //options.UseSqlServer(connectionString);
             options.UseLazyLoadingProxies();
         });
@@ -82,7 +82,7 @@ public class Program
             .AddJsonFile("appsettings.json")
             .Build();
 
-        // Add in actual logging feature.
+        // Add in Log message feature.
         Log.Logger = new LoggerConfiguration()
             .ReadFrom.Configuration(configsettings)
             .CreateLogger();
