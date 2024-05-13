@@ -86,12 +86,6 @@ public class UserController : ControllerBase
         }
     }
 
-
-
-
-
-
-
     [HttpPost("authenticate")]
     public IActionResult Authenticate(AuthenticateRequest model)
     {
@@ -114,6 +108,20 @@ public class UserController : ControllerBase
         return Ok(users);
     }
 
+
+    [HttpGet("GetUserSession")]
+    public IEnumerable<User> GetUserSession()
+    {
+        try
+        {
+            return GameSession.UsersInSession;
+        }
+        catch (Exception ex)
+        {
+            StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            throw;
+        }
+    }
 
 
     // ----------------------

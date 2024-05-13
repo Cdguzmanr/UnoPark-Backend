@@ -48,6 +48,29 @@ namespace TEAM11.UNO.BL
             }
         }
 
+        public bool Logout(string username)
+        {
+            try
+            {
+                var user = Load().FirstOrDefault(u => u.Username == username);
+                if (user != null)
+                {
+                    // Add code to check if user is already in session
+
+                    GameSession.UsersInSession.Remove(user);
+                    return true; // Logout successful
+                }
+                else
+                {
+                    return false; // Logout failed
+                }
+            }
+            catch (Exception)
+            {
+
+                throw new LoginFailureException("Cannot logout with these credentials.");
+            }
+        }
 
         // Simplified Login
         public bool Login(string username, string password)
@@ -57,6 +80,9 @@ namespace TEAM11.UNO.BL
                 var user = Load().FirstOrDefault(u => u.Username == username);
                 if (user != null && user.Password == GetHash(password))
                 {
+                    // Add code to check if user is already in session
+                    
+                    GameSession.UsersInSession.Add(user);
                     return true; // Login successful
                 }
                 else
@@ -69,8 +95,6 @@ namespace TEAM11.UNO.BL
                 throw new LoginFailureException("Cannot log in with these credentials.  Your IP address has been saved.");
             }
         }
-
-
 
         public bool Login(User user)
         {
@@ -123,6 +147,7 @@ namespace TEAM11.UNO.BL
                 throw;
             }
         }
+
         public List<User> Load()
         {
             try

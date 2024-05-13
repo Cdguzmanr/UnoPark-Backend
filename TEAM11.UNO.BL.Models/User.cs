@@ -20,6 +20,10 @@ namespace TEAM11.UNO.BL.Models
         [DisplayName("Password")]
         public string Password { get; set; }
 
+        public bool isPlaying { get; set; } = false;
+
+        public bool searchingGame { get; set; } = false;
+
         public string FullName { get { return FirstName + " " + LastName; } }
     }
 }
