@@ -19,7 +19,7 @@ namespace TEAM11.UNO.BL
         public UserManager(DbContextOptions<UNOEntities> options) : base(options) { }
 
 
-        private string GetHash(string Password)
+        public static string GetHash(string Password)
         {
             using (var hasher = new System.Security.Cryptography.SHA1Managed())
             {
@@ -47,6 +47,30 @@ namespace TEAM11.UNO.BL
                 Insert(new User { Username = "kvicchiollo", FirstName = "Ken", LastName = "Vicchiollo", Password = "password" });
             }
         }
+
+
+        // Simplified Login
+        public bool Login(string username, string password)
+        {
+            try
+            {
+                var user = Load().FirstOrDefault(u => u.Username == username);
+                if (user != null && user.Password == GetHash(password))
+                {
+                    return true; // Login successful
+                }
+                else
+                {
+                    return false; // Login failed
+                }
+            }
+            catch (Exception)
+            {
+                throw new LoginFailureException("Cannot log in with these credentials.  Your IP address has been saved.");
+            }
+        }
+
+
 
         public bool Login(User user)
         {
