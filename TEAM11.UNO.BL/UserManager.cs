@@ -48,6 +48,30 @@ namespace TEAM11.UNO.BL
             }
         }
 
+
+        // Simplified Login
+        public bool Login(string username, string password)
+        {
+            try
+            {
+                var user = Load().FirstOrDefault(u => u.Username == username);
+                if (user != null && user.Password == GetHash(password))
+                {
+                    return true; // Login successful
+                }
+                else
+                {
+                    return false; // Login failed
+                }
+            }
+            catch (Exception)
+            {
+                throw new LoginFailureException("Cannot log in with these credentials.  Your IP address has been saved.");
+            }
+        }
+
+
+
         public bool Login(User user)
         {
             try
