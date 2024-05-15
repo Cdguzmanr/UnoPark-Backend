@@ -15,7 +15,7 @@ namespace TEAM11.UNO.BL.Test
         {
             List<Card> cards = new CardManager(options).Load();
 
-            int expected = 54;
+            int expected = 56;
 
             Assert.AreEqual(expected, cards.Count);
         }
@@ -57,7 +57,7 @@ namespace TEAM11.UNO.BL.Test
         public void ReportCardTest()
         {
             var cards = new CardManager(options).Load();
-            string[] columns = { "Name", "Color", "Type" };
+            string[] columns = { "Number", "Color" };
             var data = CardManager.ConvertData<Card>(cards, columns);
 
             Excel.Export("cards.xlsx", data);

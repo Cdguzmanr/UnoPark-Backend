@@ -21,6 +21,10 @@ namespace TEAM11.UNO.API.Controllers
             logger.LogWarning("Game Log Controller Check");
         }
 
+        /// <summary>
+        /// Returns all of the Game Logs.
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IEnumerable<GameLog> Get()
         {
@@ -35,6 +39,10 @@ namespace TEAM11.UNO.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Returns a independent paticular Game Log.
+        /// </summary>
+        /// <returns></returns>
         [HttpGet("{id}")]
         public GameLog Get(Guid id)
         {
@@ -50,6 +58,10 @@ namespace TEAM11.UNO.API.Controllers
 
         }
 
+        /// <summary>
+        /// Insert a Game Log.
+        /// </summary>
+        /// <returns></returns>
         [HttpPost("{rollback?}")]
         public int Post([FromBody] GameLog gameLog, bool rollback = false)
         {
@@ -64,6 +76,10 @@ namespace TEAM11.UNO.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Update a Game Log.
+        /// </summary>
+        /// <returns></returns>
         [HttpPut("{id}/{rollback?}")]
         public int Put(Guid id, [FromBody] GameLog gameLog, bool rollback = false)
         {
@@ -78,6 +94,10 @@ namespace TEAM11.UNO.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Delete a Game Log.
+        /// </summary>
+        /// <returns></returns>
         [HttpDelete("{id}/{rollback?}")]
         public int Delete(Guid id, bool rollback = false)
         {
