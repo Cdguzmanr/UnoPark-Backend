@@ -14,6 +14,8 @@ namespace TEAM11.UNO.BL
         }
 
 
+
+
         public int Insert(Game game, bool rollback = false)
         {
             try
@@ -28,13 +30,14 @@ namespace TEAM11.UNO.BL
                         row.Gamelogs.Add(new tblGameLog { Id = gamelog.Id, Description = gamelog.Description, Timestamp = gamelog.Timestamp, GameId = gamelog.GameId });
                     }
                 }
+*/
                 if (game.Players != null)
                 {
                     foreach (Player player in game.Players)
                     {
                         row.Players.Add(new tblPlayer { Id = player.Id, IsComputerPlayer = player.IsComputerPlayer, UserId = player.UserId, GameId = player.GameId }); // Todo: add the rest of the properties (Username, GameName, Playercards)
                     }
-                }*/
+                }/**/
                 
                 game.Id = row.Id;
                 return base.Insert(row, rollback);

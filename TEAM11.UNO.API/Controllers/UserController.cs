@@ -88,9 +88,27 @@ public class UserController : ControllerBase
     }
 
 
-
-
-
+    [HttpPost("logout")]
+    public IActionResult Logout(UserLoginDto userDto)
+    {
+        try
+        {
+            // Check if the user is in session and remove them if found
+            if (GameSession.UsersInSession.Any(u => u.Username == userDto.Username))
+            {
+                GameSession.UsersInSession.RemoveAll(u => u.Username == userDto.Username);
+                return Ok(new { Message = "Logout successful" });
+            }
+            else
+            {
+                return NotFound(new { Error = "User not found in session" });
+            }
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { Error = ex.Message });
+        }
+    }
 
 
     [HttpPost("authenticate")]
@@ -114,6 +132,83 @@ public class UserController : ControllerBase
         var users = _userService.GetAll();
         return Ok(users);
     }
+
+    [HttpGet("GetUserSession")]
+    public IEnumerable<User> GetUserSession()
+    {
+        try
+        {
+            return GameSession.UsersInSession;
+        }
+        catch (Exception ex)
+        {
+            StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            throw;
+        }
+    }
+
+/*
+    [HttpPost("searchgame")]
+    public IActionResult SearchGame(string username, int numberOfPlayers)
+    {
+        try
+        {
+            // Check if the user is already searching for a game
+            if (GameSession.UsersInSession.Any(u => u.Username == username && u.IsSearchingGame))
+            {
+                return BadRequest(new { Error = "User is already searching for a game" });
+            }
+
+            // Find other players in session who are also searching for a game with the same number of players
+            var playersMatchingSearch = GameSession.UsersInSession
+                .Where(u => u.IsSearchingGame && u.NumberOfPlayers == numberOfPlayers && u.Username != username)
+                .ToList();
+
+            // If enough players are found, create a new game room and add players to it
+            if (playersMatchingSearch.Count >= numberOfPlayers - 1)
+            {
+                var gameRoom = new GameRoom();
+                gameRoom.Players.Add(username); // Add the current user to the game room
+
+                // Add other players to the game room
+                for (int i = 0; i < numberOfPlayers - 1; i++)
+                {
+                    gameRoom.Players.Add(playersMatchingSearch[i].Username);
+                }
+
+                // Notify players that they are added to the game room
+                foreach (var player in gameRoom.Players)
+                {
+                    // You can implement a notification mechanism here, such as sending a message or updating status
+                    // Example: SendNotification(player, "You are added to a new game room");
+                }
+
+                // Remove players from UsersInSession as they are added to the game room
+                foreach (var player in gameRoom.Players)
+                {
+                    GameSession.UsersInSession.RemoveAll(u => u.Username == player && u.IsSearchingGame);
+                }
+
+                return Ok(new { Message = "Game room created successfully" });
+            }
+            else
+            {
+                // Update user status to indicate they are searching for a game
+                var user = GameSession.UsersInSession.FirstOrDefault(u => u.Username == username);
+                if (user != null)
+                {
+                    user.IsSearchingGame = true;
+                    user.NumberOfPlayers = numberOfPlayers;
+                }
+
+                return Ok(new { Message = "Searching for other players..." });
+            }
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { Error = ex.Message });
+        }
+    }*/
 
 
 
