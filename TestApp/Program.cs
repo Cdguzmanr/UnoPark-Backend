@@ -24,15 +24,14 @@ namespace TEAM11.UNO.ConsoleApp
 
         static async Task Main(string[] args)
         {
-            string user = "Test";
-            // Add new url
-            //string hubAddress = "https://fvtcdp.azurewebsites.net/BingoHub";
-            //string hubAddress = "https://dvdcentralapi-120212964.azurewebsites.net/BingoHub";
-            string hubAddress = "https://localhost:7045/UnoHub";
+            string user = "Test Test Test";
+
+            string remoteAddress = "https://bigprojectapi-300079087.azurewebsites.net/UnoHub";
+            string localAddress = "https://localhost:7045/UnoHub";
 
             string operation = DrawMenu();
 
-            var signalRConnection = new SignalRConnection(hubAddress);
+            var signalRConnection = new SignalRConnection(localAddress);
 
             while (operation != "x")
             {

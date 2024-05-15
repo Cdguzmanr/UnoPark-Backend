@@ -13,7 +13,7 @@ namespace TEAM11.UNO.PL.Data
     {
         // Ain't got a clue about the "size" of the guid that we need. How do we figure that out?
 
-        Guid[] cardId = new Guid[54];
+        Guid[] cardId = new Guid[56];
         Guid[] gameId = new Guid[4];
         Guid[] gamelogId = new Guid[3];
         Guid[] playerId = new Guid[6];
@@ -76,7 +76,7 @@ namespace TEAM11.UNO.PL.Data
                 entity.Property(e => e.Id).ValueGeneratedNever();
 
                 // Otherwise, just creating the properties from the Entities folder.
-                entity.Property(e => e.Name)
+                entity.Property(e => e.Number)
                     .IsRequired()
                     .HasMaxLength(50)
                     .IsUnicode(false);
@@ -84,77 +84,77 @@ namespace TEAM11.UNO.PL.Data
                     .IsRequired()
                     .HasMaxLength(50)
                     .IsUnicode(false);
-                entity.Property(e => e.Type)
-                    .IsRequired()
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
 
                 // Create default data now.
                 List<tblCard> cards = new List<tblCard>
                 {
-                    // Number cards
-                    new tblCard { Id = cardId[0], Name = "R0", Color = "Red", Type = "Number" },
-                    new tblCard { Id = cardId[1], Name = "R1", Color = "Red", Type = "Number" },
-                    new tblCard { Id = cardId[2], Name = "R2", Color = "Red", Type = "Number" },
-                    new tblCard { Id = cardId[3], Name = "R3", Color = "Red", Type = "Number" },
-                    new tblCard { Id = cardId[4], Name = "R4", Color = "Red", Type = "Number" },
-                    new tblCard { Id = cardId[5], Name = "R5", Color = "Red", Type = "Number" },
-                    new tblCard { Id = cardId[6], Name = "R6", Color = "Red", Type = "Number" },
-                    new tblCard { Id = cardId[7], Name = "R7", Color = "Red", Type = "Number" },
-                    new tblCard { Id = cardId[8], Name = "R8", Color = "Red", Type = "Number" },
-                    new tblCard { Id = cardId[9], Name = "R9", Color = "Red", Type = "Number" },
-                    new tblCard { Id = cardId[10], Name = "B0", Color = "Blue", Type = "Number" },
-                    new tblCard { Id = cardId[11], Name = "B1", Color = "Blue", Type = "Number" },
-                    new tblCard { Id = cardId[12], Name = "B2", Color = "Blue", Type = "Number" },
-                    new tblCard { Id = cardId[13], Name = "B3", Color = "Blue", Type = "Number" },
-                    new tblCard { Id = cardId[14], Name = "B4", Color = "Blue", Type = "Number" },
-                    new tblCard { Id = cardId[15], Name = "B5", Color = "Blue", Type = "Number" },
-                    new tblCard { Id = cardId[16], Name = "B6", Color = "Blue", Type = "Number" },
-                    new tblCard { Id = cardId[17], Name = "B7", Color = "Blue", Type = "Number" },
-                    new tblCard { Id = cardId[18], Name = "B8", Color = "Blue", Type = "Number" },
-                    new tblCard { Id = cardId[19], Name = "B9", Color = "Blue", Type = "Number" },
-                    new tblCard { Id = cardId[20], Name = "Y0", Color = "Yellow", Type = "Number" },
-                    new tblCard { Id = cardId[21], Name = "Y1", Color = "Yellow", Type = "Number" },
-                    new tblCard { Id = cardId[22], Name = "Y2", Color = "Yellow", Type = "Number" },
-                    new tblCard { Id = cardId[23], Name = "Y3", Color = "Yellow", Type = "Number" },
-                    new tblCard { Id = cardId[24], Name = "Y4", Color = "Yellow", Type = "Number" },
-                    new tblCard { Id = cardId[25], Name = "Y5", Color = "Yellow", Type = "Number" },
-                    new tblCard { Id = cardId[26], Name = "Y6", Color = "Yellow", Type = "Number" },
-                    new tblCard { Id = cardId[27], Name = "Y7", Color = "Yellow", Type = "Number" },
-                    new tblCard { Id = cardId[28], Name = "Y8", Color = "Yellow", Type = "Number" },
-                    new tblCard { Id = cardId[29], Name = "Y9", Color = "Yellow", Type = "Number" },
-                    new tblCard { Id = cardId[30], Name = "G0", Color = "Green", Type = "Number" },
-                    new tblCard { Id = cardId[31], Name = "G1", Color = "Green", Type = "Number" },
-                    new tblCard { Id = cardId[32], Name = "G2", Color = "Green", Type = "Number" },
-                    new tblCard { Id = cardId[33], Name = "G3", Color = "Green", Type = "Number" },
-                    new tblCard { Id = cardId[34], Name = "G4", Color = "Green", Type = "Number" },
-                    new tblCard { Id = cardId[35], Name = "G5", Color = "Green", Type = "Number" },
-                    new tblCard { Id = cardId[36], Name = "G6", Color = "Green", Type = "Number" },
-                    new tblCard { Id = cardId[37], Name = "G7", Color = "Green", Type = "Number" },
-                    new tblCard { Id = cardId[38], Name = "G8", Color = "Green", Type = "Number" },
-                    new tblCard { Id = cardId[39], Name = "G9", Color = "Green", Type = "Number" },
+                    // Blue
+                    new tblCard { Id = cardId[0], Number = "1", Color = "Blue" },
+                    new tblCard { Id = cardId[1], Number = "2", Color = "Blue" },
+                    new tblCard { Id = cardId[2], Number = "3", Color = "Blue" },
+                    new tblCard { Id = cardId[3], Number = "4", Color = "Blue" },
+                    new tblCard { Id = cardId[4], Number = "5", Color = "Blue" },
+                    new tblCard { Id = cardId[5], Number = "6", Color = "Blue" },
+                    new tblCard { Id = cardId[6], Number = "7", Color = "Blue" },
+                    new tblCard { Id = cardId[7], Number = "8", Color = "Blue" },
+                    new tblCard { Id = cardId[8], Number = "9", Color = "Blue" },
 
-                    // Action cards
+                    new tblCard { Id = cardId[9], Number = "10", Color = "Blue" },
+                    new tblCard { Id = cardId[10], Number = "11", Color = "Blue" },
+                    new tblCard { Id = cardId[11], Number = "12", Color = "Blue" },
+                    new tblCard { Id = cardId[12], Number = "13", Color = "Blue" },
+                    new tblCard { Id = cardId[13], Number = "14", Color = "Blue" },
 
-                    // What names would we like these cards to be below? The ones above makes sense for LETTER (COLOR) then Number...
-                    // But what about the cards below?
+                    // Red
+                    new tblCard { Id = cardId[14], Number = "1", Color = "Red" },
+                    new tblCard { Id = cardId[15], Number = "2", Color = "Red" },
+                    new tblCard { Id = cardId[16], Number = "3", Color = "Red" },
+                    new tblCard { Id = cardId[17], Number = "4", Color = "Red" },
+                    new tblCard { Id = cardId[18], Number = "5", Color = "Red" },
+                    new tblCard { Id = cardId[19], Number = "6", Color = "Red" },
+                    new tblCard { Id = cardId[20], Number = "7", Color = "Red" },
+                    new tblCard { Id = cardId[21], Number = "8", Color = "Red" },
+                    new tblCard { Id = cardId[22], Number = "9", Color = "Red" },
 
-                    new tblCard { Id = cardId[40], Name = "Skip", Color = "Red", Type = "Action" },
-                    new tblCard { Id = cardId[41], Name = "Reverse", Color = "Red", Type = "Action" },
-                    new tblCard { Id = cardId[42], Name = "DrawTwo", Color = "Red", Type = "Action" },
-                    new tblCard { Id = cardId[43], Name = "Skip", Color = "Blue", Type = "Action" },
-                    new tblCard { Id = cardId[44], Name = "Reverse", Color = "Blue", Type = "Action" },
-                    new tblCard { Id = cardId[45], Name = "DrawTwo", Color = "Blue", Type = "Action" },
-                    new tblCard { Id = cardId[46], Name = "Skip", Color = "Yellow", Type = "Action" },
-                    new tblCard { Id = cardId[47], Name = "Reverse", Color = "Yellow", Type = "Action" },
-                    new tblCard { Id = cardId[48], Name = "DrawTwo", Color = "Yellow", Type = "Action" },
-                    new tblCard { Id = cardId[49], Name = "Skip", Color = "Green", Type = "Action" },
-                    new tblCard { Id = cardId[50], Name = "Reverse", Color = "Green", Type = "Action" },
-                    new tblCard { Id = cardId[51], Name = "DrawTwo", Color = "Green", Type = "Action" },
+                    new tblCard { Id = cardId[23], Number = "10", Color = "Red" },
+                    new tblCard { Id = cardId[24], Number = "11", Color = "Red" },
+                    new tblCard { Id = cardId[25], Number = "12", Color = "Red" },
+                    new tblCard { Id = cardId[26], Number = "13", Color = "Red" },
+                    new tblCard { Id = cardId[27], Number = "14", Color = "Red" },
 
-                    // Wild cards
-                    new tblCard { Id = cardId[52], Name = "Wild", Color = "Wild", Type = "Wild" },
-                    new tblCard { Id = cardId[53], Name = "Wild Draw Four", Color = "Wild", Type = "Wild" }
+                    // Yellow
+                    new tblCard { Id = cardId[28], Number = "1", Color = "Yellow" },
+                    new tblCard { Id = cardId[29], Number = "2", Color = "Yellow" },
+                    new tblCard { Id = cardId[30], Number = "3", Color = "Yellow" },
+                    new tblCard { Id = cardId[31], Number = "4", Color = "Yellow" },
+                    new tblCard { Id = cardId[32], Number = "5", Color = "Yellow" },
+                    new tblCard { Id = cardId[33], Number = "6", Color = "Yellow" },
+                    new tblCard { Id = cardId[34], Number = "7", Color = "Yellow" },
+                    new tblCard { Id = cardId[35], Number = "8", Color = "Yellow" },
+                    new tblCard { Id = cardId[36], Number = "9", Color = "Yellow" },
+
+                    new tblCard { Id = cardId[37], Number = "10", Color = "Yellow" },
+                    new tblCard { Id = cardId[38], Number = "11", Color = "Yellow" },
+                    new tblCard { Id = cardId[39], Number = "12", Color = "Yellow" },
+                    new tblCard { Id = cardId[40], Number = "13", Color = "Yellow" },
+                    new tblCard { Id = cardId[41], Number = "14", Color = "Yellow" },
+
+                    // Green
+                    new tblCard { Id = cardId[42], Number = "1", Color = "Green" },
+                    new tblCard { Id = cardId[43], Number = "2", Color = "Green" },
+                    new tblCard { Id = cardId[44], Number = "3", Color = "Green" },
+                    new tblCard { Id = cardId[45], Number = "4", Color = "Green" },
+                    new tblCard { Id = cardId[46], Number = "5", Color = "Green" },
+                    new tblCard { Id = cardId[47], Number = "6", Color = "Green" },
+                    new tblCard { Id = cardId[48], Number = "7", Color = "Green" },
+                    new tblCard { Id = cardId[49], Number = "8", Color = "Green" },
+                    new tblCard { Id = cardId[50], Number = "9", Color = "Green" },
+
+                    new tblCard { Id = cardId[51], Number = "10", Color = "Green" },
+                    new tblCard { Id = cardId[52], Number = "11", Color = "Green" },
+                    new tblCard { Id = cardId[53], Number = "12", Color = "Green" },
+                    new tblCard { Id = cardId[54], Number = "13", Color = "Green" },
+                    new tblCard { Id = cardId[55], Number = "14", Color = "Green" }
 
                 };
                 modelBuilder.Entity<tblCard>().HasData(cards);

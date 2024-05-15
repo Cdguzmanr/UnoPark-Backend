@@ -55,7 +55,7 @@ public class Program
         // Add database connection information.
         builder.Services.AddDbContextPool<UNOEntities>(options =>
         {
-            options.UseSqlServer(builder.Configuration.GetConnectionString("UNOConnection"));
+            options.UseSqlServer(builder.Configuration.GetConnectionString("UNOConnection1"));
             //options.UseSqlServer(connectionString);
             options.UseLazyLoadingProxies();
         });

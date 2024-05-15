@@ -9,8 +9,7 @@ namespace TEAM11.UNO.BL.Models
     public class Card
     {
         public Guid Id { get; set; }
-        public string Name { get; set; }
+        public string Number { get; set; }
         public string Color { get; set; }
-        public string Type { get; set; }
     }
 }

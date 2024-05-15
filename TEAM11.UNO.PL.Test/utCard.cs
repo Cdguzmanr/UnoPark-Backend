@@ -22,9 +22,8 @@ namespace TEAM11.UNO.PL.Test
         {
             tblCard row = new tblCard();
             row.Id = Guid.NewGuid();
-            row.Name = "Test";
+            row.Number = "Test";
             row.Color = "Red";
-            row.Type = "Number";
 
             int results = base.InsertTest(row);
             Assert.IsTrue(results > 0);
@@ -37,7 +36,7 @@ namespace TEAM11.UNO.PL.Test
 
             if (row != null)
             {
-                row.Name = "UpdateTest";
+                row.Number = "UpdateTest";
                 int results = base.UpdateTest(row);
                 Assert.IsTrue(results > 0);
             }            

@@ -30,9 +30,8 @@ namespace TEAM11.UNO.BL.Test
         {
             Card card = new Card
             {
-                Name = "Test",
-                Color = "Magenta",
-                Type = "Kewl"
+                Number = "Test",
+                Color = "Magenta"
             };
 
             int result = new CardManager(options).Insert(card, true);
@@ -42,7 +41,7 @@ namespace TEAM11.UNO.BL.Test
         public void UpdateTest()
         {
             Card card = new CardManager(options).Load().FirstOrDefault();
-            card.Name = "BipityBoBopBop";
+            card.Number = "BipityBoBopBop";
 
             Assert.IsTrue(new CardManager(options).Update(card, true) > 0);
         }
