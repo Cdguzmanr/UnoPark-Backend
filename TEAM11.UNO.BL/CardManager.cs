@@ -20,7 +20,7 @@ namespace TEAM11.UNO.BL
         {
             try
             {
-                tblCard row = new tblCard { Id = card.Id, Name = card.Name, Color = card.Color, Type = card.Type }; // Name, Color, Type
+                tblCard row = new tblCard { Id = card.Id, Number = card.Number, Color = card.Color }; // Name, Color, Type
                 card.Id = row.Id;
                 return base.Insert(row, rollback);
             }
@@ -36,9 +36,8 @@ namespace TEAM11.UNO.BL
                 return base.Update(new tblCard
                 {
                     Id = card.Id,
-                    Name = card.Name,
+                    Number = card.Number,
                     Color = card.Color,
-                    Type = card.Type
                 },
                 rollback);
             }
@@ -68,9 +67,8 @@ namespace TEAM11.UNO.BL
                         new Card
                         {
                             Id = d.Id,
-                            Name = d.Name,
-                            Color = d.Color,
-                            Type = d.Type
+                            Number = d.Number,
+                            Color = d.Color
                         }));
 
                 return rows;
@@ -93,9 +91,8 @@ namespace TEAM11.UNO.BL
                     Card card = new Card
                     {
                         Id = row.Id,
-                        Name = row.Name,
-                        Color = row.Color,
-                        Type = row.Type
+                        Number = row.Number,
+                        Color = row.Color
                     };
                     return card;
                 }
