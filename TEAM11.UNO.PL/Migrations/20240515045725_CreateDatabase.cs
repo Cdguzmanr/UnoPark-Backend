@@ -306,6 +306,15 @@ namespace TEAM11.UNO.PL.Migrations
                 column: "tblPlayerId",
                 principalTable: "tblPlayer",
                 principalColumn: "Id");
+
+            migrationBuilder.Sql(@"CREATE PROCEDURE [dbo].[spGetCardsByColor]
+                    @CardColor VARCHAR(20)
+                AS
+                    SELECT Id, Number, Color
+                    FROM Cards
+                    WHERE Color LIKE '%' + @CardColor + '%';
+                GO
+            ");
         }
 
         /// <inheritdoc />
