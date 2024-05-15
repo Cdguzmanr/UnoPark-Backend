@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.SignalR;
 using NuGet.Common;
+using System.Diagnostics;
 using TEAM11.UNO.BL;
 
 namespace TEAM11.UNO.API.Hubs
@@ -13,7 +14,17 @@ namespace TEAM11.UNO.API.Hubs
         {
             new LogManager(logger).Log(new LogMessage(NuGet.Common.LogLevel.Information,
                                                              "User: " + user + " Message: " + message));
+
+            // Test 1.
+            Console.WriteLine("Does it hit the Hub?");
+            Debug.WriteLine("Does it hit the Hub?");
+
             await Clients.All.SendAsync("ReceiveMessage", user, message);
+
+            // Test 2.
+            Console.WriteLine("After it hit the Hub?");
+            Debug.WriteLine("After it hit the Hub?");
+
         }
 
         // -------- Extra Methods ------

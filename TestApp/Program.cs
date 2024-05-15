@@ -3,66 +3,48 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
+using TEAM11.UNO.ConsoleApp;
 using Newtonsoft.Json;
 
-namespace UnoCardRetriever
+namespace TEAM11.UNO.ConsoleApp
 {
     class Program
     {
+        private static string DrawMenu()
+        {
+
+            Console.WriteLine("Which operation do you wish to perform?");
+            Console.WriteLine("Connect to a channel (c)");
+
+            Console.WriteLine("Exit (x)");
+
+            string operation = Console.ReadLine();
+            return operation;
+        }
+
         static async Task Main(string[] args)
         {
-            try
+            string user = "Test";
+            // Add new url
+            //string hubAddress = "https://fvtcdp.azurewebsites.net/BingoHub";
+            //string hubAddress = "https://dvdcentralapi-120212964.azurewebsites.net/BingoHub";
+            string hubAddress = "https://localhost:7045/UnoHub";
+
+            string operation = DrawMenu();
+
+            var signalRConnection = new SignalRConnection(hubAddress);
+
+            while (operation != "x")
             {
-                // Base URL of the API
-                string baseUrl = "https://bigprojectapi-300079087.azurewebsites.net";
-
-                // API endpoint for retrieving cards
-                string endpoint = "/api/Card";
-
-                // Create HttpClient instance
-                using (var client = new HttpClient())
+                switch (operation)
                 {
-                    client.BaseAddress = new Uri(baseUrl);
-                    client.DefaultRequestHeaders.Accept.Clear();
-                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
-                    // Call the API to retrieve the list of cards
-                    HttpResponseMessage response = await client.GetAsync(endpoint);
-
-                    if (response.IsSuccessStatusCode)
-                    {
-                        // Parse the response content
-                        var cardJson = await response.Content.ReadAsStringAsync();
-                        var cards = JsonConvert.DeserializeObject<List<Card>>(cardJson);
-
-                        // Display the retrieved cards
-                        Console.WriteLine("Retrieved Cards:");
-                        foreach (var card in cards)
-                        {
-                            Console.WriteLine($"ID: {card.Id}, Name: {card.Name}, Color: {card.Color}, Type: {card.Type}");
-                        }
-                    }
-                    else
-                    {
-                        Console.WriteLine($"Failed to retrieve cards. Status code: {response.StatusCode}");
-                    }
+                    case "c":
+                        signalRConnection.ConnectToChannel(user);
+                        break;
                 }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"An error occurred: {ex.Message}");
-            }
 
-            Console.ReadLine();
+                operation = DrawMenu();
+            }
         }
-    }
-
-    // Define Card class to match the structure of the JSON response
-    public class Card
-    {
-        public Guid Id { get; set; }
-        public string Name { get; set; }
-        public string Color { get; set; }
-        public string Type { get; set; }
     }
 }
