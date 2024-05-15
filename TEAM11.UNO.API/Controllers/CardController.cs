@@ -21,6 +21,10 @@ namespace TEAM11.UNO.API.Controllers
             logger.LogWarning("Card Controller Check");
         }
 
+        /// <summary>
+        /// Returns all of the Uno Cards.
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IEnumerable<Card> Get()
         {
@@ -35,6 +39,10 @@ namespace TEAM11.UNO.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Returns a independent paticular Uno Card.
+        /// </summary>
+        /// <returns></returns>
         [HttpGet("{id}")]
         public Card Get(Guid id)
         {
@@ -50,6 +58,10 @@ namespace TEAM11.UNO.API.Controllers
 
         }
 
+        /// <summary>
+        /// Insert a Uno Card.
+        /// </summary>
+        /// <returns></returns>
         [HttpPost("{rollback?}")]
         public int Post([FromBody] Card card, bool rollback = false)
         {
@@ -64,6 +76,10 @@ namespace TEAM11.UNO.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Update a Uno Card.
+        /// </summary>
+        /// <returns></returns>
         [HttpPut("{id}/{rollback?}")]
         public int Put(Guid id, [FromBody] Card card, bool rollback = false)
         {
@@ -78,6 +94,10 @@ namespace TEAM11.UNO.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Deletes a Uno Card.
+        /// </summary>
+        /// <returns></returns>
         [HttpDelete("{id}/{rollback?}")]
         public int Delete(Guid id, bool rollback = false)
         {

@@ -22,6 +22,10 @@ namespace TEAM11.UNO.API.Controllers
             logger.LogWarning("Game Controller Check");
         }
 
+        /// <summary>
+        /// Returns all of the Games.
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IEnumerable<Game> Get()
         {
@@ -36,6 +40,10 @@ namespace TEAM11.UNO.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Returns a independent paticular Game.
+        /// </summary>
+        /// <returns></returns>
         [HttpGet("{id}")]
         public Game Get(Guid id)
         {
@@ -51,6 +59,10 @@ namespace TEAM11.UNO.API.Controllers
 
         }
 
+        /// <summary>
+        /// Insert a Game.
+        /// </summary>
+        /// <returns></returns>
         [HttpPost("{rollback?}")]
         public int Post([FromBody] Game game, bool rollback = false)
         {
@@ -65,6 +77,11 @@ namespace TEAM11.UNO.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Update a Game.
+        /// </summary>
+        /// <returns></returns>
+
         [HttpPut("{id}/{rollback?}")]
         public int Put(Guid id, [FromBody] Game game, bool rollback = false)
         {
@@ -78,6 +95,11 @@ namespace TEAM11.UNO.API.Controllers
                 throw;
             }
         }
+
+        /// <summary>
+        /// Delete a Game.
+        /// </summary>
+        /// <returns></returns>
 
         [HttpDelete("{id}/{rollback?}")]
         public int Delete(Guid id, bool rollback = false)

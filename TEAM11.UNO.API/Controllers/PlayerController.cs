@@ -11,7 +11,6 @@ namespace TEAM11.UNO.API.Controllers
     [ApiController]
     public class PlayerController : ControllerBase
     {
-
         private readonly DbContextOptions<UNOEntities> options;
         private readonly ILogger<PlayerController> logger;
 
@@ -22,6 +21,10 @@ namespace TEAM11.UNO.API.Controllers
             logger.LogWarning("Player Controller Check");
         }
 
+        /// <summary>
+        /// Returns all of the Players.
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IEnumerable<Player> Get()
         {
@@ -36,6 +39,10 @@ namespace TEAM11.UNO.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Returns a independent paticular Player.
+        /// </summary>
+        /// <returns></returns>
         [HttpGet("{id}")]
         public Player Get(Guid id)
         {
@@ -51,6 +58,10 @@ namespace TEAM11.UNO.API.Controllers
 
         }
 
+        /// <summary>
+        /// Insert a Player.
+        /// </summary>
+        /// <returns></returns>
         [HttpPost("{rollback?}")]
         public int Post([FromBody] Player player, bool rollback = false)
         {
@@ -65,6 +76,11 @@ namespace TEAM11.UNO.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Update a Player.
+        /// </summary>
+        /// <returns></returns>
+
         [HttpPut("{id}/{rollback?}")]
         public int Put(Guid id, [FromBody] Player player, bool rollback = false)
         {
@@ -78,6 +94,11 @@ namespace TEAM11.UNO.API.Controllers
                 throw;
             }
         }
+
+        /// <summary>
+        /// Delete a Player.
+        /// </summary>
+        /// <returns></returns>
 
         [HttpDelete("{id}/{rollback?}")]
         public int Delete(Guid id, bool rollback = false)
