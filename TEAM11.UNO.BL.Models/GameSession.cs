@@ -12,6 +12,8 @@ namespace TEAM11.UNO.BL.Models
     {
         public static List<User> UsersInSession { get; set; } = new List<User>();
 
+        public static List<User> UsersSearchingGame { get; set; } = new List<User>();
+
         public static List<Game> GamesInSession { get; set; } = new List<Game>();
 
     }
